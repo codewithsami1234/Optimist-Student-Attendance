@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_md"
+    android:layout_marginTop="@dimen/spacing_sm"
+    app:cardCornerRadius="@dimen/corner_radius_md"
+    app:cardElevation="@dimen/elevation_card"
+    app:cardBackgroundColor="@color/surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_md">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="@dimen/avatar_size_sm"
+                android:layout_height="@dimen/avatar_size_sm"
+                android:background="@drawable/bg_avatar_circle">
+
+                <TextView
+                    android:id="@+id/textAvatarInitials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/royal_green"
+                    android:textSize="@dimen/text_size_body"
+                    android:textStyle="bold"
+                    tools:text="AR" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textStudentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold"
+                    tools:text="Ahmed Raza" />
+
+                <TextView
+                    android:id="@+id/textRollNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption"
+                    tools:text="CS-001" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/groupStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioPresent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_present"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_caption" />
+
+            <RadioButton
+                android:id="@+id/radioAbsent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_absent"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_caption" />
+
+            <RadioButton
+                android:id="@+id/radioLate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_late"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_caption" />
+
+            <RadioButton
+                android:id="@+id/radioLeave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_leave"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_caption" />
+        </RadioGroup>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.studentattendance.data.local.AcademicSeederTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-02T11:09:11" hostname="DESKTOP-2QJ7AKR" time="0.006">
+  <properties/>
+  <testcase name="seedIfEmptyDoesNotThrow" classname="com.example.studentattendance.data.local.AcademicSeederTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

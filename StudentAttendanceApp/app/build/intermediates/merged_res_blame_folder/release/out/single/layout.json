@@ -1,0 +1,190 @@
+[
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_adjust_attendance.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_adjust_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_selection.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_selection.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_adjustment.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_adjustment.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_department_report_row.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_department_report_row.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_add_semester.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_semester.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_io_action_row.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_io_action_row.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_add_subject.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_subject.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_notifications.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_notifications.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_student_report_detail.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_student_report_detail.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/fragment_profile.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_add_student.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_student.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_login.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_state_loading.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_state_loading.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_report_student.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_report_student.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_import_export.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_import_export.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_add_lecture.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_lecture.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_edit_profile.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_edit_profile.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_dropdown.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_dropdown.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_department.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_department.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_add_department.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_department.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_catalog_choice.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_catalog_choice.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_notification_badge.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_notification_badge.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_students.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_students.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_student_roster.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_student_roster.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_state_empty.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_state_empty.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_state_error.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_state_error.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/fragment_departments.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_departments.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_stat_card.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_stat_card.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/view_quick_action.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_quick_action.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_low_attendance.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_low_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_splash.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_register.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/fragment_reports.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_reports.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_attendance_session.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_attendance_session.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_history_filter.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_history_filter.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_notification.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_notification.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_main.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_add_section.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_section.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_attendance_detail.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_attendance_detail.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/fragment_history.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_import_target.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_import_target.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_session_detail.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_session_detail.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/activity_mark_attendance.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_mark_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/fragment_dashboard.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_student_attendance.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_student_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/dialog_adjustment_history.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_adjustment_history.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-mergeReleaseResources-55:/layout/item_attendance_by_date.xml",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_attendance_by_date.xml"
+    }
+]

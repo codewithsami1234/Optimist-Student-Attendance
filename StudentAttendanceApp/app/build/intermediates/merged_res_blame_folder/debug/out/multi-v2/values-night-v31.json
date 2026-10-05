@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.studentattendance.app-mergeDebugResources-54:/values-night-v31/values-night-v31.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\DELL\\Desktop\\StudentAttendance\\StudentAttendanceApp\\app\\src\\main\\res\\values-night-v31\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "10",
+                        "endColumns": "12",
+                        "endOffsets": "705"
+                    }
+                }
+            ]
+        }
+    ]
+}

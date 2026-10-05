@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spec palette (use these hex values everywhere) -->
+    <color name="sky_blue">#5DADE2</color>
+    <color name="royal_green">#1B4D3E</color>
+    <color name="sea_green">#2E8B74</color>
+    <color name="aqua">#4FD1C5</color>
+    <color name="bone_white">#FAF7F2</color>
+    <color name="cream">#FFF8ED</color>
+    <color name="oyster_beige">#E8DFD3</color>
+    <color name="amber_sand">#E8A33D</color>
+    <color name="soft_terracotta">#E07856</color>
+
+    <!-- Mapped aliases so existing layouts pick up the palette -->
+    <color name="brand_primary">@color/sky_blue</color>
+    <color name="brand_primary_dark">@color/royal_green</color>
+    <color name="brand_primary_light">@color/aqua</color>
+    <color name="brand_secondary">@color/sea_green</color>
+
+    <color name="status_present">@color/sea_green</color>
+    <color name="status_present_bg">@color/sea_green</color>
+    <color name="status_present_on">@color/bone_white</color>
+    <color name="status_absent">@color/soft_terracotta</color>
+    <color name="status_absent_bg">@color/soft_terracotta</color>
+    <color name="status_absent_on">@color/royal_green</color>
+    <color name="status_late">@color/amber_sand</color>
+    <color name="status_late_bg">@color/amber_sand</color>
+    <color name="status_late_on">@color/royal_green</color>
+    <color name="status_leave">@color/sky_blue</color>
+    <color name="status_leave_bg">@color/cream</color>
+    <color name="status_leave_on">@color/royal_green</color>
+    <color name="status_not_marked">@color/oyster_beige</color>
+    <color name="status_not_marked_bg">@color/oyster_beige</color>
+    <color name="status_not_marked_on">@color/royal_green</color>
+    <color name="status_on_fill">@color/bone_white</color>
+
+    <color name="surface">@color/cream</color>
+    <color name="surface_alt">@color/cream</color>
+    <color name="background">@color/bone_white</color>
+    <color name="text_primary">@color/royal_green</color>
+    <color name="text_secondary">#1F5C48</color>
+    <color name="text_hint">@color/sea_green</color>
+    <color name="divider">@color/oyster_beige</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">@color/royal_green</color>
+    <color name="error">@color/soft_terracotta</color>
+    <color name="overlay_scrim">#661B4D3E</color>
+    <color name="bar_background">@color/sky_blue</color>
+    <color name="bar_content">#FFFFFF</color>
+    <color name="nav_item_unchecked">@color/bone_white</color>
+    <color name="success_banner_bg">#E6F4F0</color>
+</resources>

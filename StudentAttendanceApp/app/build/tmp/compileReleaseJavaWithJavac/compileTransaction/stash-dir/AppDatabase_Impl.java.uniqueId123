@@ -1,0 +1,623 @@
+package com.example.studentattendance.data.local;
+
+import androidx.annotation.NonNull;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.room.RoomDatabase;
+import androidx.room.RoomOpenHelper;
+import androidx.room.migration.AutoMigrationSpec;
+import androidx.room.migration.Migration;
+import androidx.room.util.DBUtil;
+import androidx.room.util.TableInfo;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
+import com.example.studentattendance.data.local.dao.AccountDao;
+import com.example.studentattendance.data.local.dao.AccountDao_Impl;
+import com.example.studentattendance.data.local.dao.AdjustmentDao;
+import com.example.studentattendance.data.local.dao.AdjustmentDao_Impl;
+import com.example.studentattendance.data.local.dao.AttendanceRecordDao;
+import com.example.studentattendance.data.local.dao.AttendanceRecordDao_Impl;
+import com.example.studentattendance.data.local.dao.AttendanceSessionDao;
+import com.example.studentattendance.data.local.dao.AttendanceSessionDao_Impl;
+import com.example.studentattendance.data.local.dao.DepartmentDao;
+import com.example.studentattendance.data.local.dao.DepartmentDao_Impl;
+import com.example.studentattendance.data.local.dao.NotificationDao;
+import com.example.studentattendance.data.local.dao.NotificationDao_Impl;
+import com.example.studentattendance.data.local.dao.SectionDao;
+import com.example.studentattendance.data.local.dao.SectionDao_Impl;
+import com.example.studentattendance.data.local.dao.SemesterDao;
+import com.example.studentattendance.data.local.dao.SemesterDao_Impl;
+import com.example.studentattendance.data.local.dao.StudentDao;
+import com.example.studentattendance.data.local.dao.StudentDao_Impl;
+import com.example.studentattendance.data.local.dao.SubjectDao;
+import com.example.studentattendance.data.local.dao.SubjectDao_Impl;
+import java.lang.Class;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import javax.annotation.processing.Generated;
+
+@Generated("androidx.room.RoomProcessor")
+@SuppressWarnings({"unchecked", "deprecation"})
+public final class AppDatabase_Impl extends AppDatabase {
+  private volatile AccountDao _accountDao;
+
+  private volatile DepartmentDao _departmentDao;
+
+  private volatile SemesterDao _semesterDao;
+
+  private volatile SectionDao _sectionDao;
+
+  private volatile SubjectDao _subjectDao;
+
+  private volatile StudentDao _studentDao;
+
+  private volatile AttendanceSessionDao _attendanceSessionDao;
+
+  private volatile AttendanceRecordDao _attendanceRecordDao;
+
+  private volatile AdjustmentDao _adjustmentDao;
+
+  private volatile NotificationDao _notificationDao;
+
+  @Override
+  @NonNull
+  protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(3) {
+      @Override
+      public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS `accounts` (`id` TEXT NOT NULL, `email` TEXT NOT NULL, `name` TEXT, `role` TEXT, `designation` TEXT, `passwordHash` TEXT, `googleSubject` TEXT, `lowAttendanceThreshold` REAL NOT NULL, `createdAtMillis` INTEGER NOT NULL, PRIMARY KEY(`id`))");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_accounts_email` ON `accounts` (`email`)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_accounts_googleSubject` ON `accounts` (`googleSubject`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `departments` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `name` TEXT, `code` TEXT, `headOfDepartment` TEXT, `archived` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_departments_ownerUserId` ON `departments` (`ownerUserId`)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_departments_ownerUserId_code` ON `departments` (`ownerUserId`, `code`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `semesters` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `departmentId` TEXT, `name` TEXT, `semesterNumber` INTEGER NOT NULL, `archived` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`departmentId`) REFERENCES `departments`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_semesters_ownerUserId` ON `semesters` (`ownerUserId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_semesters_departmentId` ON `semesters` (`departmentId`)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_semesters_ownerUserId_departmentId_semesterNumber` ON `semesters` (`ownerUserId`, `departmentId`, `semesterNumber`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `sections` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `semesterId` TEXT, `name` TEXT, `archived` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`semesterId`) REFERENCES `semesters`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_sections_ownerUserId` ON `sections` (`ownerUserId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_sections_semesterId` ON `sections` (`semesterId`)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_sections_ownerUserId_semesterId_name` ON `sections` (`ownerUserId`, `semesterId`, `name`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `subjects` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `departmentId` TEXT, `name` TEXT, `code` TEXT, `archived` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`departmentId`) REFERENCES `departments`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_subjects_ownerUserId` ON `subjects` (`ownerUserId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_subjects_departmentId` ON `subjects` (`departmentId`)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_subjects_ownerUserId_departmentId_code` ON `subjects` (`ownerUserId`, `departmentId`, `code`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `students` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `rollNumber` TEXT, `name` TEXT, `departmentId` TEXT, `semesterId` TEXT, `sectionId` TEXT, `email` TEXT, `phone` TEXT, `archived` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`sectionId`) REFERENCES `sections`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_students_ownerUserId` ON `students` (`ownerUserId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_students_sectionId` ON `students` (`sectionId`)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_students_ownerUserId_sectionId_rollNumber` ON `students` (`ownerUserId`, `sectionId`, `rollNumber`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `attendance_sessions` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `departmentId` TEXT, `departmentName` TEXT, `semesterId` TEXT, `semesterName` TEXT, `sectionId` TEXT, `sectionName` TEXT, `subjectId` TEXT, `subjectName` TEXT, `date` TEXT, `lectureNumber` INTEGER NOT NULL, `createdAtMillis` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`sectionId`) REFERENCES `sections`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`subjectId`) REFERENCES `subjects`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_sessions_ownerUserId` ON `attendance_sessions` (`ownerUserId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_sessions_sectionId` ON `attendance_sessions` (`sectionId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_sessions_subjectId` ON `attendance_sessions` (`subjectId`)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_attendance_sessions_ownerUserId_sectionId_subjectId_date_lectureNumber` ON `attendance_sessions` (`ownerUserId`, `sectionId`, `subjectId`, `date`, `lectureNumber`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `attendance_records` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `sessionId` TEXT, `studentId` TEXT, `studentName` TEXT, `rollNumber` TEXT, `departmentId` TEXT, `semesterId` TEXT, `sectionId` TEXT, `date` TEXT, `status` TEXT, `markedBy` TEXT, `markedAtMillis` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`sessionId`) REFERENCES `attendance_sessions`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`studentId`) REFERENCES `students`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_records_ownerUserId` ON `attendance_records` (`ownerUserId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_records_sessionId` ON `attendance_records` (`sessionId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_records_studentId` ON `attendance_records` (`studentId`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `attendance_adjustments` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `studentId` TEXT, `departmentId` TEXT, `delta` INTEGER NOT NULL, `reason` TEXT, `adjustedByUserId` TEXT, `adjustedByName` TEXT, `createdAtMillis` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`studentId`) REFERENCES `students`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_adjustments_ownerUserId` ON `attendance_adjustments` (`ownerUserId`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_attendance_adjustments_studentId` ON `attendance_adjustments` (`studentId`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `notifications` (`id` TEXT NOT NULL, `ownerUserId` TEXT NOT NULL, `type` TEXT, `message` TEXT, `relatedStudentId` TEXT, `read` INTEGER NOT NULL, `createdAtMillis` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`ownerUserId`) REFERENCES `accounts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_notifications_ownerUserId` ON `notifications` (`ownerUserId`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'acc06eafe0f460b97b823b6452f011e1')");
+      }
+
+      @Override
+      public void dropAllTables(@NonNull final SupportSQLiteDatabase db) {
+        db.execSQL("DROP TABLE IF EXISTS `accounts`");
+        db.execSQL("DROP TABLE IF EXISTS `departments`");
+        db.execSQL("DROP TABLE IF EXISTS `semesters`");
+        db.execSQL("DROP TABLE IF EXISTS `sections`");
+        db.execSQL("DROP TABLE IF EXISTS `subjects`");
+        db.execSQL("DROP TABLE IF EXISTS `students`");
+        db.execSQL("DROP TABLE IF EXISTS `attendance_sessions`");
+        db.execSQL("DROP TABLE IF EXISTS `attendance_records`");
+        db.execSQL("DROP TABLE IF EXISTS `attendance_adjustments`");
+        db.execSQL("DROP TABLE IF EXISTS `notifications`");
+        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
+        if (_callbacks != null) {
+          for (RoomDatabase.Callback _callback : _callbacks) {
+            _callback.onDestructiveMigration(db);
+          }
+        }
+      }
+
+      @Override
+      public void onCreate(@NonNull final SupportSQLiteDatabase db) {
+        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
+        if (_callbacks != null) {
+          for (RoomDatabase.Callback _callback : _callbacks) {
+            _callback.onCreate(db);
+          }
+        }
+      }
+
+      @Override
+      public void onOpen(@NonNull final SupportSQLiteDatabase db) {
+        mDatabase = db;
+        db.execSQL("PRAGMA foreign_keys = ON");
+        internalInitInvalidationTracker(db);
+        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
+        if (_callbacks != null) {
+          for (RoomDatabase.Callback _callback : _callbacks) {
+            _callback.onOpen(db);
+          }
+        }
+      }
+
+      @Override
+      public void onPreMigrate(@NonNull final SupportSQLiteDatabase db) {
+        DBUtil.dropFtsSyncTriggers(db);
+      }
+
+      @Override
+      public void onPostMigrate(@NonNull final SupportSQLiteDatabase db) {
+      }
+
+      @Override
+      @NonNull
+      public RoomOpenHelper.ValidationResult onValidateSchema(
+          @NonNull final SupportSQLiteDatabase db) {
+        final HashMap<String, TableInfo.Column> _columnsAccounts = new HashMap<String, TableInfo.Column>(9);
+        _columnsAccounts.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("email", new TableInfo.Column("email", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("role", new TableInfo.Column("role", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("designation", new TableInfo.Column("designation", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("passwordHash", new TableInfo.Column("passwordHash", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("googleSubject", new TableInfo.Column("googleSubject", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("lowAttendanceThreshold", new TableInfo.Column("lowAttendanceThreshold", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAccounts.put("createdAtMillis", new TableInfo.Column("createdAtMillis", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysAccounts = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesAccounts = new HashSet<TableInfo.Index>(2);
+        _indicesAccounts.add(new TableInfo.Index("index_accounts_email", true, Arrays.asList("email"), Arrays.asList("ASC")));
+        _indicesAccounts.add(new TableInfo.Index("index_accounts_googleSubject", true, Arrays.asList("googleSubject"), Arrays.asList("ASC")));
+        final TableInfo _infoAccounts = new TableInfo("accounts", _columnsAccounts, _foreignKeysAccounts, _indicesAccounts);
+        final TableInfo _existingAccounts = TableInfo.read(db, "accounts");
+        if (!_infoAccounts.equals(_existingAccounts)) {
+          return new RoomOpenHelper.ValidationResult(false, "accounts(com.example.studentattendance.data.local.entity.AccountEntity).\n"
+                  + " Expected:\n" + _infoAccounts + "\n"
+                  + " Found:\n" + _existingAccounts);
+        }
+        final HashMap<String, TableInfo.Column> _columnsDepartments = new HashMap<String, TableInfo.Column>(6);
+        _columnsDepartments.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsDepartments.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsDepartments.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsDepartments.put("code", new TableInfo.Column("code", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsDepartments.put("headOfDepartment", new TableInfo.Column("headOfDepartment", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsDepartments.put("archived", new TableInfo.Column("archived", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysDepartments = new HashSet<TableInfo.ForeignKey>(1);
+        _foreignKeysDepartments.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesDepartments = new HashSet<TableInfo.Index>(2);
+        _indicesDepartments.add(new TableInfo.Index("index_departments_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesDepartments.add(new TableInfo.Index("index_departments_ownerUserId_code", true, Arrays.asList("ownerUserId", "code"), Arrays.asList("ASC", "ASC")));
+        final TableInfo _infoDepartments = new TableInfo("departments", _columnsDepartments, _foreignKeysDepartments, _indicesDepartments);
+        final TableInfo _existingDepartments = TableInfo.read(db, "departments");
+        if (!_infoDepartments.equals(_existingDepartments)) {
+          return new RoomOpenHelper.ValidationResult(false, "departments(com.example.studentattendance.data.local.entity.DepartmentEntity).\n"
+                  + " Expected:\n" + _infoDepartments + "\n"
+                  + " Found:\n" + _existingDepartments);
+        }
+        final HashMap<String, TableInfo.Column> _columnsSemesters = new HashMap<String, TableInfo.Column>(6);
+        _columnsSemesters.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSemesters.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSemesters.put("departmentId", new TableInfo.Column("departmentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSemesters.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSemesters.put("semesterNumber", new TableInfo.Column("semesterNumber", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSemesters.put("archived", new TableInfo.Column("archived", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysSemesters = new HashSet<TableInfo.ForeignKey>(2);
+        _foreignKeysSemesters.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        _foreignKeysSemesters.add(new TableInfo.ForeignKey("departments", "CASCADE", "NO ACTION", Arrays.asList("departmentId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesSemesters = new HashSet<TableInfo.Index>(3);
+        _indicesSemesters.add(new TableInfo.Index("index_semesters_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesSemesters.add(new TableInfo.Index("index_semesters_departmentId", false, Arrays.asList("departmentId"), Arrays.asList("ASC")));
+        _indicesSemesters.add(new TableInfo.Index("index_semesters_ownerUserId_departmentId_semesterNumber", true, Arrays.asList("ownerUserId", "departmentId", "semesterNumber"), Arrays.asList("ASC", "ASC", "ASC")));
+        final TableInfo _infoSemesters = new TableInfo("semesters", _columnsSemesters, _foreignKeysSemesters, _indicesSemesters);
+        final TableInfo _existingSemesters = TableInfo.read(db, "semesters");
+        if (!_infoSemesters.equals(_existingSemesters)) {
+          return new RoomOpenHelper.ValidationResult(false, "semesters(com.example.studentattendance.data.local.entity.SemesterEntity).\n"
+                  + " Expected:\n" + _infoSemesters + "\n"
+                  + " Found:\n" + _existingSemesters);
+        }
+        final HashMap<String, TableInfo.Column> _columnsSections = new HashMap<String, TableInfo.Column>(5);
+        _columnsSections.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSections.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSections.put("semesterId", new TableInfo.Column("semesterId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSections.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSections.put("archived", new TableInfo.Column("archived", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysSections = new HashSet<TableInfo.ForeignKey>(2);
+        _foreignKeysSections.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        _foreignKeysSections.add(new TableInfo.ForeignKey("semesters", "CASCADE", "NO ACTION", Arrays.asList("semesterId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesSections = new HashSet<TableInfo.Index>(3);
+        _indicesSections.add(new TableInfo.Index("index_sections_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesSections.add(new TableInfo.Index("index_sections_semesterId", false, Arrays.asList("semesterId"), Arrays.asList("ASC")));
+        _indicesSections.add(new TableInfo.Index("index_sections_ownerUserId_semesterId_name", true, Arrays.asList("ownerUserId", "semesterId", "name"), Arrays.asList("ASC", "ASC", "ASC")));
+        final TableInfo _infoSections = new TableInfo("sections", _columnsSections, _foreignKeysSections, _indicesSections);
+        final TableInfo _existingSections = TableInfo.read(db, "sections");
+        if (!_infoSections.equals(_existingSections)) {
+          return new RoomOpenHelper.ValidationResult(false, "sections(com.example.studentattendance.data.local.entity.SectionEntity).\n"
+                  + " Expected:\n" + _infoSections + "\n"
+                  + " Found:\n" + _existingSections);
+        }
+        final HashMap<String, TableInfo.Column> _columnsSubjects = new HashMap<String, TableInfo.Column>(6);
+        _columnsSubjects.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSubjects.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSubjects.put("departmentId", new TableInfo.Column("departmentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSubjects.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSubjects.put("code", new TableInfo.Column("code", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSubjects.put("archived", new TableInfo.Column("archived", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysSubjects = new HashSet<TableInfo.ForeignKey>(2);
+        _foreignKeysSubjects.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        _foreignKeysSubjects.add(new TableInfo.ForeignKey("departments", "CASCADE", "NO ACTION", Arrays.asList("departmentId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesSubjects = new HashSet<TableInfo.Index>(3);
+        _indicesSubjects.add(new TableInfo.Index("index_subjects_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesSubjects.add(new TableInfo.Index("index_subjects_departmentId", false, Arrays.asList("departmentId"), Arrays.asList("ASC")));
+        _indicesSubjects.add(new TableInfo.Index("index_subjects_ownerUserId_departmentId_code", true, Arrays.asList("ownerUserId", "departmentId", "code"), Arrays.asList("ASC", "ASC", "ASC")));
+        final TableInfo _infoSubjects = new TableInfo("subjects", _columnsSubjects, _foreignKeysSubjects, _indicesSubjects);
+        final TableInfo _existingSubjects = TableInfo.read(db, "subjects");
+        if (!_infoSubjects.equals(_existingSubjects)) {
+          return new RoomOpenHelper.ValidationResult(false, "subjects(com.example.studentattendance.data.local.entity.SubjectEntity).\n"
+                  + " Expected:\n" + _infoSubjects + "\n"
+                  + " Found:\n" + _existingSubjects);
+        }
+        final HashMap<String, TableInfo.Column> _columnsStudents = new HashMap<String, TableInfo.Column>(10);
+        _columnsStudents.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("rollNumber", new TableInfo.Column("rollNumber", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("departmentId", new TableInfo.Column("departmentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("semesterId", new TableInfo.Column("semesterId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("sectionId", new TableInfo.Column("sectionId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("email", new TableInfo.Column("email", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("phone", new TableInfo.Column("phone", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("archived", new TableInfo.Column("archived", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysStudents = new HashSet<TableInfo.ForeignKey>(2);
+        _foreignKeysStudents.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        _foreignKeysStudents.add(new TableInfo.ForeignKey("sections", "NO ACTION", "NO ACTION", Arrays.asList("sectionId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesStudents = new HashSet<TableInfo.Index>(3);
+        _indicesStudents.add(new TableInfo.Index("index_students_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesStudents.add(new TableInfo.Index("index_students_sectionId", false, Arrays.asList("sectionId"), Arrays.asList("ASC")));
+        _indicesStudents.add(new TableInfo.Index("index_students_ownerUserId_sectionId_rollNumber", true, Arrays.asList("ownerUserId", "sectionId", "rollNumber"), Arrays.asList("ASC", "ASC", "ASC")));
+        final TableInfo _infoStudents = new TableInfo("students", _columnsStudents, _foreignKeysStudents, _indicesStudents);
+        final TableInfo _existingStudents = TableInfo.read(db, "students");
+        if (!_infoStudents.equals(_existingStudents)) {
+          return new RoomOpenHelper.ValidationResult(false, "students(com.example.studentattendance.data.local.entity.StudentEntity).\n"
+                  + " Expected:\n" + _infoStudents + "\n"
+                  + " Found:\n" + _existingStudents);
+        }
+        final HashMap<String, TableInfo.Column> _columnsAttendanceSessions = new HashMap<String, TableInfo.Column>(13);
+        _columnsAttendanceSessions.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("departmentId", new TableInfo.Column("departmentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("departmentName", new TableInfo.Column("departmentName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("semesterId", new TableInfo.Column("semesterId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("semesterName", new TableInfo.Column("semesterName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("sectionId", new TableInfo.Column("sectionId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("sectionName", new TableInfo.Column("sectionName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("subjectId", new TableInfo.Column("subjectId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("subjectName", new TableInfo.Column("subjectName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("date", new TableInfo.Column("date", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("lectureNumber", new TableInfo.Column("lectureNumber", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceSessions.put("createdAtMillis", new TableInfo.Column("createdAtMillis", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysAttendanceSessions = new HashSet<TableInfo.ForeignKey>(3);
+        _foreignKeysAttendanceSessions.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        _foreignKeysAttendanceSessions.add(new TableInfo.ForeignKey("sections", "CASCADE", "NO ACTION", Arrays.asList("sectionId"), Arrays.asList("id")));
+        _foreignKeysAttendanceSessions.add(new TableInfo.ForeignKey("subjects", "CASCADE", "NO ACTION", Arrays.asList("subjectId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesAttendanceSessions = new HashSet<TableInfo.Index>(4);
+        _indicesAttendanceSessions.add(new TableInfo.Index("index_attendance_sessions_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesAttendanceSessions.add(new TableInfo.Index("index_attendance_sessions_sectionId", false, Arrays.asList("sectionId"), Arrays.asList("ASC")));
+        _indicesAttendanceSessions.add(new TableInfo.Index("index_attendance_sessions_subjectId", false, Arrays.asList("subjectId"), Arrays.asList("ASC")));
+        _indicesAttendanceSessions.add(new TableInfo.Index("index_attendance_sessions_ownerUserId_sectionId_subjectId_date_lectureNumber", true, Arrays.asList("ownerUserId", "sectionId", "subjectId", "date", "lectureNumber"), Arrays.asList("ASC", "ASC", "ASC", "ASC", "ASC")));
+        final TableInfo _infoAttendanceSessions = new TableInfo("attendance_sessions", _columnsAttendanceSessions, _foreignKeysAttendanceSessions, _indicesAttendanceSessions);
+        final TableInfo _existingAttendanceSessions = TableInfo.read(db, "attendance_sessions");
+        if (!_infoAttendanceSessions.equals(_existingAttendanceSessions)) {
+          return new RoomOpenHelper.ValidationResult(false, "attendance_sessions(com.example.studentattendance.data.local.entity.AttendanceSessionEntity).\n"
+                  + " Expected:\n" + _infoAttendanceSessions + "\n"
+                  + " Found:\n" + _existingAttendanceSessions);
+        }
+        final HashMap<String, TableInfo.Column> _columnsAttendanceRecords = new HashMap<String, TableInfo.Column>(13);
+        _columnsAttendanceRecords.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("sessionId", new TableInfo.Column("sessionId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("studentId", new TableInfo.Column("studentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("studentName", new TableInfo.Column("studentName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("rollNumber", new TableInfo.Column("rollNumber", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("departmentId", new TableInfo.Column("departmentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("semesterId", new TableInfo.Column("semesterId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("sectionId", new TableInfo.Column("sectionId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("date", new TableInfo.Column("date", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("status", new TableInfo.Column("status", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("markedBy", new TableInfo.Column("markedBy", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceRecords.put("markedAtMillis", new TableInfo.Column("markedAtMillis", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysAttendanceRecords = new HashSet<TableInfo.ForeignKey>(3);
+        _foreignKeysAttendanceRecords.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        _foreignKeysAttendanceRecords.add(new TableInfo.ForeignKey("attendance_sessions", "CASCADE", "NO ACTION", Arrays.asList("sessionId"), Arrays.asList("id")));
+        _foreignKeysAttendanceRecords.add(new TableInfo.ForeignKey("students", "CASCADE", "NO ACTION", Arrays.asList("studentId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesAttendanceRecords = new HashSet<TableInfo.Index>(3);
+        _indicesAttendanceRecords.add(new TableInfo.Index("index_attendance_records_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesAttendanceRecords.add(new TableInfo.Index("index_attendance_records_sessionId", false, Arrays.asList("sessionId"), Arrays.asList("ASC")));
+        _indicesAttendanceRecords.add(new TableInfo.Index("index_attendance_records_studentId", false, Arrays.asList("studentId"), Arrays.asList("ASC")));
+        final TableInfo _infoAttendanceRecords = new TableInfo("attendance_records", _columnsAttendanceRecords, _foreignKeysAttendanceRecords, _indicesAttendanceRecords);
+        final TableInfo _existingAttendanceRecords = TableInfo.read(db, "attendance_records");
+        if (!_infoAttendanceRecords.equals(_existingAttendanceRecords)) {
+          return new RoomOpenHelper.ValidationResult(false, "attendance_records(com.example.studentattendance.data.local.entity.AttendanceRecordEntity).\n"
+                  + " Expected:\n" + _infoAttendanceRecords + "\n"
+                  + " Found:\n" + _existingAttendanceRecords);
+        }
+        final HashMap<String, TableInfo.Column> _columnsAttendanceAdjustments = new HashMap<String, TableInfo.Column>(9);
+        _columnsAttendanceAdjustments.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("studentId", new TableInfo.Column("studentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("departmentId", new TableInfo.Column("departmentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("delta", new TableInfo.Column("delta", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("reason", new TableInfo.Column("reason", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("adjustedByUserId", new TableInfo.Column("adjustedByUserId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("adjustedByName", new TableInfo.Column("adjustedByName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendanceAdjustments.put("createdAtMillis", new TableInfo.Column("createdAtMillis", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysAttendanceAdjustments = new HashSet<TableInfo.ForeignKey>(2);
+        _foreignKeysAttendanceAdjustments.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        _foreignKeysAttendanceAdjustments.add(new TableInfo.ForeignKey("students", "CASCADE", "NO ACTION", Arrays.asList("studentId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesAttendanceAdjustments = new HashSet<TableInfo.Index>(2);
+        _indicesAttendanceAdjustments.add(new TableInfo.Index("index_attendance_adjustments_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        _indicesAttendanceAdjustments.add(new TableInfo.Index("index_attendance_adjustments_studentId", false, Arrays.asList("studentId"), Arrays.asList("ASC")));
+        final TableInfo _infoAttendanceAdjustments = new TableInfo("attendance_adjustments", _columnsAttendanceAdjustments, _foreignKeysAttendanceAdjustments, _indicesAttendanceAdjustments);
+        final TableInfo _existingAttendanceAdjustments = TableInfo.read(db, "attendance_adjustments");
+        if (!_infoAttendanceAdjustments.equals(_existingAttendanceAdjustments)) {
+          return new RoomOpenHelper.ValidationResult(false, "attendance_adjustments(com.example.studentattendance.data.local.entity.AdjustmentEntity).\n"
+                  + " Expected:\n" + _infoAttendanceAdjustments + "\n"
+                  + " Found:\n" + _existingAttendanceAdjustments);
+        }
+        final HashMap<String, TableInfo.Column> _columnsNotifications = new HashMap<String, TableInfo.Column>(7);
+        _columnsNotifications.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("ownerUserId", new TableInfo.Column("ownerUserId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("type", new TableInfo.Column("type", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("message", new TableInfo.Column("message", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("relatedStudentId", new TableInfo.Column("relatedStudentId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("read", new TableInfo.Column("read", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("createdAtMillis", new TableInfo.Column("createdAtMillis", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysNotifications = new HashSet<TableInfo.ForeignKey>(1);
+        _foreignKeysNotifications.add(new TableInfo.ForeignKey("accounts", "CASCADE", "NO ACTION", Arrays.asList("ownerUserId"), Arrays.asList("id")));
+        final HashSet<TableInfo.Index> _indicesNotifications = new HashSet<TableInfo.Index>(1);
+        _indicesNotifications.add(new TableInfo.Index("index_notifications_ownerUserId", false, Arrays.asList("ownerUserId"), Arrays.asList("ASC")));
+        final TableInfo _infoNotifications = new TableInfo("notifications", _columnsNotifications, _foreignKeysNotifications, _indicesNotifications);
+        final TableInfo _existingNotifications = TableInfo.read(db, "notifications");
+        if (!_infoNotifications.equals(_existingNotifications)) {
+          return new RoomOpenHelper.ValidationResult(false, "notifications(com.example.studentattendance.data.local.entity.NotificationEntity).\n"
+                  + " Expected:\n" + _infoNotifications + "\n"
+                  + " Found:\n" + _existingNotifications);
+        }
+        return new RoomOpenHelper.ValidationResult(true, null);
+      }
+    }, "acc06eafe0f460b97b823b6452f011e1", "547da9cbffe82051a830304daa0d121d");
+    final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
+    final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
+    return _helper;
+  }
+
+  @Override
+  @NonNull
+  protected InvalidationTracker createInvalidationTracker() {
+    final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
+    final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "accounts","departments","semesters","sections","subjects","students","attendance_sessions","attendance_records","attendance_adjustments","notifications");
+  }
+
+  @Override
+  public void clearAllTables() {
+    super.assertNotMainThread();
+    final SupportSQLiteDatabase _db = super.getOpenHelper().getWritableDatabase();
+    final boolean _supportsDeferForeignKeys = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP;
+    try {
+      if (!_supportsDeferForeignKeys) {
+        _db.execSQL("PRAGMA foreign_keys = FALSE");
+      }
+      super.beginTransaction();
+      if (_supportsDeferForeignKeys) {
+        _db.execSQL("PRAGMA defer_foreign_keys = TRUE");
+      }
+      _db.execSQL("DELETE FROM `accounts`");
+      _db.execSQL("DELETE FROM `departments`");
+      _db.execSQL("DELETE FROM `semesters`");
+      _db.execSQL("DELETE FROM `sections`");
+      _db.execSQL("DELETE FROM `subjects`");
+      _db.execSQL("DELETE FROM `students`");
+      _db.execSQL("DELETE FROM `attendance_sessions`");
+      _db.execSQL("DELETE FROM `attendance_records`");
+      _db.execSQL("DELETE FROM `attendance_adjustments`");
+      _db.execSQL("DELETE FROM `notifications`");
+      super.setTransactionSuccessful();
+    } finally {
+      super.endTransaction();
+      if (!_supportsDeferForeignKeys) {
+        _db.execSQL("PRAGMA foreign_keys = TRUE");
+      }
+      _db.query("PRAGMA wal_checkpoint(FULL)").close();
+      if (!_db.inTransaction()) {
+        _db.execSQL("VACUUM");
+      }
+    }
+  }
+
+  @Override
+  @NonNull
+  protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
+    final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
+    _typeConvertersMap.put(AccountDao.class, AccountDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(DepartmentDao.class, DepartmentDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(SemesterDao.class, SemesterDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(SectionDao.class, SectionDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(SubjectDao.class, SubjectDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(StudentDao.class, StudentDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(AttendanceSessionDao.class, AttendanceSessionDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(AttendanceRecordDao.class, AttendanceRecordDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(AdjustmentDao.class, AdjustmentDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(NotificationDao.class, NotificationDao_Impl.getRequiredConverters());
+    return _typeConvertersMap;
+  }
+
+  @Override
+  @NonNull
+  public Set<Class<? extends AutoMigrationSpec>> getRequiredAutoMigrationSpecs() {
+    final HashSet<Class<? extends AutoMigrationSpec>> _autoMigrationSpecsSet = new HashSet<Class<? extends AutoMigrationSpec>>();
+    return _autoMigrationSpecsSet;
+  }
+
+  @Override
+  @NonNull
+  public List<Migration> getAutoMigrations(
+      @NonNull final Map<Class<? extends AutoMigrationSpec>, AutoMigrationSpec> autoMigrationSpecs) {
+    final List<Migration> _autoMigrations = new ArrayList<Migration>();
+    return _autoMigrations;
+  }
+
+  @Override
+  public AccountDao accountDao() {
+    if (_accountDao != null) {
+      return _accountDao;
+    } else {
+      synchronized(this) {
+        if(_accountDao == null) {
+          _accountDao = new AccountDao_Impl(this);
+        }
+        return _accountDao;
+      }
+    }
+  }
+
+  @Override
+  public DepartmentDao departmentDao() {
+    if (_departmentDao != null) {
+      return _departmentDao;
+    } else {
+      synchronized(this) {
+        if(_departmentDao == null) {
+          _departmentDao = new DepartmentDao_Impl(this);
+        }
+        return _departmentDao;
+      }
+    }
+  }
+
+  @Override
+  public SemesterDao semesterDao() {
+    if (_semesterDao != null) {
+      return _semesterDao;
+    } else {
+      synchronized(this) {
+        if(_semesterDao == null) {
+          _semesterDao = new SemesterDao_Impl(this);
+        }
+        return _semesterDao;
+      }
+    }
+  }
+
+  @Override
+  public SectionDao sectionDao() {
+    if (_sectionDao != null) {
+      return _sectionDao;
+    } else {
+      synchronized(this) {
+        if(_sectionDao == null) {
+          _sectionDao = new SectionDao_Impl(this);
+        }
+        return _sectionDao;
+      }
+    }
+  }
+
+  @Override
+  public SubjectDao subjectDao() {
+    if (_subjectDao != null) {
+      return _subjectDao;
+    } else {
+      synchronized(this) {
+        if(_subjectDao == null) {
+          _subjectDao = new SubjectDao_Impl(this);
+        }
+        return _subjectDao;
+      }
+    }
+  }
+
+  @Override
+  public StudentDao studentDao() {
+    if (_studentDao != null) {
+      return _studentDao;
+    } else {
+      synchronized(this) {
+        if(_studentDao == null) {
+          _studentDao = new StudentDao_Impl(this);
+        }
+        return _studentDao;
+      }
+    }
+  }
+
+  @Override
+  public AttendanceSessionDao attendanceSessionDao() {
+    if (_attendanceSessionDao != null) {
+      return _attendanceSessionDao;
+    } else {
+      synchronized(this) {
+        if(_attendanceSessionDao == null) {
+          _attendanceSessionDao = new AttendanceSessionDao_Impl(this);
+        }
+        return _attendanceSessionDao;
+      }
+    }
+  }
+
+  @Override
+  public AttendanceRecordDao attendanceRecordDao() {
+    if (_attendanceRecordDao != null) {
+      return _attendanceRecordDao;
+    } else {
+      synchronized(this) {
+        if(_attendanceRecordDao == null) {
+          _attendanceRecordDao = new AttendanceRecordDao_Impl(this);
+        }
+        return _attendanceRecordDao;
+      }
+    }
+  }
+
+  @Override
+  public AdjustmentDao adjustmentDao() {
+    if (_adjustmentDao != null) {
+      return _adjustmentDao;
+    } else {
+      synchronized(this) {
+        if(_adjustmentDao == null) {
+          _adjustmentDao = new AdjustmentDao_Impl(this);
+        }
+        return _adjustmentDao;
+      }
+    }
+  }
+
+  @Override
+  public NotificationDao notificationDao() {
+    if (_notificationDao != null) {
+      return _notificationDao;
+    } else {
+      synchronized(this) {
+        if(_notificationDao == null) {
+          _notificationDao = new NotificationDao_Impl(this);
+        }
+        return _notificationDao;
+      }
+    }
+  }
+}

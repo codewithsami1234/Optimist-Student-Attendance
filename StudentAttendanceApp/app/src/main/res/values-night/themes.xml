@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.StudentAttendance" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorPrimaryDark">@color/brand_primary_dark</item>
+        <item name="colorSecondary">@color/brand_secondary</item>
+        <item name="colorAccent">@color/brand_secondary</item>
+        <item name="colorOnPrimary">@color/bar_content</item>
+        <item name="colorOnSecondary">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/bar_background</item>
+        <item name="android:navigationBarColor">@color/bar_background</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="editTextStyle">@style/Widget.StudentAttendance.EditText</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorControlNormal">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/brand_primary</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="materialButtonStyle">@style/Widget.StudentAttendance.Button</item>
+        <item name="textInputStyle">@style/Widget.StudentAttendance.TextInputLayout</item>
+        <item name="popupMenuBackground">@color/surface</item>
+        <item name="android:itemBackground">@color/surface</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance.StudentAttendance.Menu</item>
+        <item name="actionOverflowButtonStyle">@style/Widget.StudentAttendance.Overflow</item>
+        <item name="toolbarStyle">@style/Widget.StudentAttendance.Toolbar</item>
+        <item name="alertDialogTheme">@style/Theme.StudentAttendance.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/Theme.StudentAttendance.Dialog</item>
+    </style>
+
+    <style name="Theme.StudentAttendance.Splash" parent="Theme.StudentAttendance.NoActionBar">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.StudentAttendance.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:background">@color/surface</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.StudentAttendance.Button.Text</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.StudentAttendance.Button.Text</item>
+    </style>
+
+    <style name="Widget.StudentAttendance.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">@dimen/corner_radius_sm</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeColor">@color/divider</item>
+        <item name="android:textColor">@color/aqua</item>
+        <item name="backgroundTint">@color/surface</item>
+    </style>
+
+    <style name="Widget.StudentAttendance.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/corner_radius_sm</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_radius_sm</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_radius_sm</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_radius_sm</item>
+        <item name="boxStrokeColor">@color/divider</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="hintTextColor">@color/aqua</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="endIconTint">@color/text_secondary</item>
+        <item name="startIconTint">@color/text_secondary</item>
+    </style>
+
+    <style name="Widget.StudentAttendance.Dropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">@dimen/corner_radius_sm</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_radius_sm</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_radius_sm</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_radius_sm</item>
+        <item name="boxStrokeColor">@color/divider</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="hintTextColor">@color/aqua</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="endIconTint">@color/text_secondary</item>
+    </style>
+
+    <style name="Widget.StudentAttendance.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/corner_radius_md</item>
+        <item name="cardElevation">@dimen/elevation_card</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="contentPadding">@dimen/spacing_md</item>
+    </style>
+
+    <style name="Widget.StudentAttendance.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="titleTextColor">@color/bar_content</item>
+        <item name="subtitleTextColor">@color/bar_content</item>
+        <item name="android:background">@color/bar_background</item>
+        <item name="navigationIconTint">@color/bar_content</item>
+    </style>
+</resources>

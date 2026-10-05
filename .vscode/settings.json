@@ -1,0 +1,19 @@
+{
+  "java.import.gradle.enabled": true,
+  "java.import.gradle.wrapper.enabled": true,
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.jdt.ls.androidSupport.enabled": "on",
+  "java.project.sourcePaths": [
+    "StudentAttendanceApp/app/src/main/java",
+    "StudentAttendanceApp/app/src/test/java"
+  ],
+  "java.import.exclusions": [
+    "**/node_modules/**",
+    "**/.metadata/**",
+    "**/archetype-resources/**",
+    "**/META-INF/maven/**"
+  ],
+  "files.exclude": {
+    "**/.gradle": true
+  }
+}

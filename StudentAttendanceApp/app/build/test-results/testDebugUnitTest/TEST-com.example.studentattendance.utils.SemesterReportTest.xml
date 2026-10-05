@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.studentattendance.utils.SemesterReportTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-09-24T11:22:25" hostname="DESKTOP-2QJ7AKR" time="0.059">
+  <properties/>
+  <testcase name="allFiltersLeaveEverySession" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.021"/>
+  <testcase name="belowFilterRespectsAcademicScope" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="courseANeverIncludesCourseBAndDoesNotMergeStudentRates" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.0"/>
+  <testcase name="recordCountsCanExceedUniqueStudentCount" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.011"/>
+  <testcase name="missingDateStaysBlankAndIsNotAbsent" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.002"/>
+  <testcase name="sectionBCardsDoNotKeepSectionACounts" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.0"/>
+  <testcase name="exportFileNamesStayFilesystemSafeAndKeepContext" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.002"/>
+  <testcase name="aggregatesMultipleMonthsSessionsAndStatuses" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="belowSeventyFiveQuickFilter" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="percentageUsesAttendancePolicyThresholds" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="exportSheetsUseRealTotalsDatesStatusesAndPercentages" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.003"/>
+  <testcase name="exactlySeventyFiveGoesToAboveNotBelow" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="departmentANeverIncludesDepartmentB" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="courseGroupsStayOrderedByAcademicSetup" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.0"/>
+  <testcase name="unnamedSectionIsLabeledNoSection" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="emptySemesterHasNoFakeZerosThatLookLikeAttendance" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <testcase name="dateRangeCardsUseInclusiveStartAndEndDates" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.0"/>
+  <testcase name="searchMatchesNameAndRoll" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.0"/>
+  <testcase name="statusAndSearchFiltersLimitExportSheetsAndSummary" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.003"/>
+  <testcase name="notMarkedRecordsAreIgnored" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.0"/>
+  <testcase name="defaultSortIsPercentageAscending" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.0"/>
+  <testcase name="departmentSemesterSectionCourseAndCodeFiltersUseAndLogic" classname="com.example.studentattendance.utils.SemesterReportTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

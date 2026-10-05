@@ -1,0 +1,29 @@
+# Deploy from this folder (StudentAttendanceApp/backend) on Render:
+# 1. New Blueprint / Web Service + PostgreSQL
+# 2. Set GOOGLE_CLIENT_IDS to your Google OAuth Web client ID
+# 3. Point the Android app API_BASE_URL at this service's https:// URL
+services:
+  - type: web
+    name: student-attendance-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: student-attendance-db
+          property: connectionString
+      - key: GOOGLE_CLIENT_IDS
+        sync: false
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: SEED_ACADEMIC
+        value: "false"
+      - key: SEED_DEMO_USER
+        value: "false"
+
+databases:
+  - name: student-attendance-db
+    plan: free

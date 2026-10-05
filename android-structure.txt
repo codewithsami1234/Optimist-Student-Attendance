@@ -1,0 +1,340 @@
+Folder PATH listing
+Volume serial number is 00000003 345D:AEDE
+C:\USERS\DELL\DESKTOP\STUDENTATTENDANCE\STUDENTATTENDANCEAPP
+|   build.gradle
+|   gradle.properties
+|   gradlew
+|   gradlew.bat
+|   local.properties
+|   README.md
+|   settings.gradle
+|   
++---.gradle
+|   |   file-system.probe
+|   |   
+|   +---8.2
+|   |   |   gc.properties
+|   |   |   
+|   |   +---checksums
+|   |   |       checksums.lock
+|   |   |       md5-checksums.bin
+|   |   |       sha1-checksums.bin
+|   |   |       
+|   |   +---dependencies-accessors
+|   |   |       dependencies-accessors.lock
+|   |   |       gc.properties
+|   |   |       
+|   |   +---executionHistory
+|   |   |       executionHistory.bin
+|   |   |       executionHistory.lock
+|   |   |       
+|   |   +---fileChanges
+|   |   |       last-build.bin
+|   |   |       
+|   |   +---fileHashes
+|   |   |       fileHashes.bin
+|   |   |       fileHashes.lock
+|   |   |       resourceHashesCache.bin
+|   |   |       
+|   |   \---vcsMetadata
+|   +---buildOutputCleanup
+|   |       buildOutputCleanup.lock
+|   |       cache.properties
+|   |       outputFiles.bin
+|   |       
+|   \---vcs-1
+|           gc.properties
+|           
++---app
+|   |   build.gradle
+|   |   proguard-rules.pro
+|   |   
+|   +---manifests
+|   |       AndroidManifest.xml
+|   |       
+|   \---src
+|       +---debug
+|       |   \---res
+|       |       \---xml
+|       |               network_security_config.xml
+|       |               
+|       +---main
+|       |   +---java
+|       |   |   \---com
+|       |   |       \---example
+|       |   |           \---studentattendance
+|       |   |               |   AttendanceApplication.java
+|       |   |               |   
+|       |   |               +---adapter
+|       |   |               |       AttendanceAdjustmentAdapter.java
+|       |   |               |       AttendanceByDateAdapter.java
+|       |   |               |       AttendanceDetailAdapter.java
+|       |   |               |       AttendanceHistoryAdapter.java
+|       |   |               |       DepartmentAdapter.java
+|       |   |               |       NotificationAdapter.java
+|       |   |               |       ReportAdapter.java
+|       |   |               |       StudentAttendanceAdapter.java
+|       |   |               |       StudentRosterAdapter.java
+|       |   |               |       
+|       |   |               +---model
+|       |   |               |       AttendanceAdjustment.java
+|       |   |               |       AttendanceRecord.java
+|       |   |               |       AttendanceSession.java
+|       |   |               |       AttendanceStatus.java
+|       |   |               |       CsvParseResult.java
+|       |   |               |       DailyTrend.java
+|       |   |               |       DashboardStats.java
+|       |   |               |       Department.java
+|       |   |               |       ImportResult.java
+|       |   |               |       ImportRowError.java
+|       |   |               |       Notification.java
+|       |   |               |       Section.java
+|       |   |               |       SectionStats.java
+|       |   |               |       Semester.java
+|       |   |               |       Student.java
+|       |   |               |       StudentAttendanceReport.java
+|       |   |               |       StudentAttendanceSummary.java
+|       |   |               |       StudentReport.java
+|       |   |               |       Subject.java
+|       |   |               |       User.java
+|       |   |               |       
+|       |   |               +---network
+|       |   |               |   |   ApiCallback.java
+|       |   |               |   |   ApiClient.java
+|       |   |               |   |   ApiErrorParser.java
+|       |   |               |   |   ApiService.java
+|       |   |               |   |   AuthInterceptor.java
+|       |   |               |   |   NetworkResult.java
+|       |   |               |   |   RetrofitExec.java
+|       |   |               |   |   SessionExpiryInterceptor.java
+|       |   |               |   |   
+|       |   |               |   \---dto
+|       |   |               |           ApiErrorBody.java
+|       |   |               |           AttendanceAdjustmentRequestDto.java
+|       |   |               |           AttendanceRecordInputDto.java
+|       |   |               |           AttendanceSaveRequestDto.java
+|       |   |               |           AuthResponseDto.java
+|       |   |               |           DepartmentCreateRequestDto.java
+|       |   |               |           DepartmentUpdateRequestDto.java
+|       |   |               |           LoginRequestDto.java
+|       |   |               |           ProfileUpdateRequestDto.java
+|       |   |               |           RegisterRequestDto.java
+|       |   |               |           SectionCreateRequestDto.java
+|       |   |               |           SectionUpdateRequestDto.java
+|       |   |               |           SemesterCreateRequestDto.java
+|       |   |               |           SemesterUpdateRequestDto.java
+|       |   |               |           StudentTransferRequestDto.java
+|       |   |               |           StudentUpdateRequestDto.java
+|       |   |               |           SubjectCreateRequestDto.java
+|       |   |               |           SubjectUpdateRequestDto.java
+|       |   |               |           
+|       |   |               +---repository
+|       |   |               |   |   AnalyticsRepository.java
+|       |   |               |   |   AttendanceAdjustmentRepository.java
+|       |   |               |   |   AttendanceRepository.java
+|       |   |               |   |   AuthRepository.java
+|       |   |               |   |   DepartmentRepository.java
+|       |   |               |   |   NotificationRepository.java
+|       |   |               |   |   StudentRepository.java
+|       |   |               |   |   
+|       |   |               |   \---impl
+|       |   |               |           MockAttendanceRepository.java
+|       |   |               |           MockAuthRepository.java
+|       |   |               |           MockDataStore.java
+|       |   |               |           MockDepartmentRepository.java
+|       |   |               |           MockStudentRepository.java
+|       |   |               |           RetrofitAnalyticsRepository.java
+|       |   |               |           RetrofitAttendanceAdjustmentRepository.java
+|       |   |               |           RetrofitAttendanceRepository.java
+|       |   |               |           RetrofitAuthRepository.java
+|       |   |               |           RetrofitDepartmentRepository.java
+|       |   |               |           RetrofitNotificationRepository.java
+|       |   |               |           RetrofitStudentRepository.java
+|       |   |               |           
+|       |   |               +---service
+|       |   |               |       CsvExcelService.java
+|       |   |               |       ExcelService.java
+|       |   |               |       RepositoryProvider.java
+|       |   |               |       
+|       |   |               +---ui
+|       |   |               |   +---attendance
+|       |   |               |   |       MarkAttendanceActivity.java
+|       |   |               |   |       MarkAttendanceViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---dashboard
+|       |   |               |   |       DashboardFragment.java
+|       |   |               |   |       DashboardViewModel.java
+|       |   |               |   |       TrendChartView.java
+|       |   |               |   |       
+|       |   |               |   +---departments
+|       |   |               |   |       DepartmentsFragment.java
+|       |   |               |   |       DepartmentsViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---history
+|       |   |               |   |       AttendanceHistoryFragment.java
+|       |   |               |   |       AttendanceHistoryViewModel.java
+|       |   |               |   |       SessionDetailActivity.java
+|       |   |               |   |       
+|       |   |               |   +---importexport
+|       |   |               |   |       ImportExportActivity.java
+|       |   |               |   |       ImportExportViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---login
+|       |   |               |   |       LoginActivity.java
+|       |   |               |   |       LoginViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---main
+|       |   |               |   |       MainActivity.java
+|       |   |               |   |       
+|       |   |               |   +---notifications
+|       |   |               |   |       NotificationsActivity.java
+|       |   |               |   |       NotificationsViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---profile
+|       |   |               |   |       ProfileFragment.java
+|       |   |               |   |       ProfileViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---register
+|       |   |               |   |       RegisterActivity.java
+|       |   |               |   |       RegisterViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---reports
+|       |   |               |   |       ReportsFragment.java
+|       |   |               |   |       ReportsViewModel.java
+|       |   |               |   |       StudentReportDetailActivity.java
+|       |   |               |   |       StudentReportDetailViewModel.java
+|       |   |               |   |       
+|       |   |               |   +---selection
+|       |   |               |   |       SelectionActivity.java
+|       |   |               |   |       SelectionViewModel.java
+|       |   |               |   |       
+|       |   |               |   \---students
+|       |   |               |           StudentsActivity.java
+|       |   |               |           StudentsViewModel.java
+|       |   |               |           
+|       |   |               \---utils
+|       |   |                       AttendancePolicy.java
+|       |   |                       Constants.java
+|       |   |                       CsvImportValidator.java
+|       |   |                       DateUtils.java
+|       |   |                       PdfReportHelper.java
+|       |   |                       PreferenceManager.java
+|       |   |                       ValidationUtils.java
+|       |   |                       ViewUtils.java
+|       |   |                       
+|       |   \---res
+|       |       +---color
+|       |       |       bottom_nav_color_selector.xml
+|       |       |       
+|       |       +---drawable
+|       |       |       bg_avatar_circle.xml
+|       |       |       bg_pill_outline.xml
+|       |       |       bg_rounded_surface.xml
+|       |       |       bg_search_bar.xml
+|       |       |       bg_status_absent.xml
+|       |       |       bg_status_late.xml
+|       |       |       bg_status_leave.xml
+|       |       |       bg_status_not_marked.xml
+|       |       |       bg_status_present.xml
+|       |       |       bg_stat_card_blue.xml
+|       |       |       ic_add.xml
+|       |       |       ic_calendar.xml
+|       |       |       ic_check_circle.xml
+|       |       |       ic_chevron_right.xml
+|       |       |       ic_dashboard.xml
+|       |       |       ic_department.xml
+|       |       |       ic_edit.xml
+|       |       |       ic_error_outline.xml
+|       |       |       ic_export.xml
+|       |       |       ic_filter.xml
+|       |       |       ic_history.xml
+|       |       |       ic_import.xml
+|       |       |       ic_inbox.xml
+|       |       |       ic_launcher_background.xml
+|       |       |       ic_launcher_foreground.xml
+|       |       |       ic_logout.xml
+|       |       |       ic_profile.xml
+|       |       |       ic_reports.xml
+|       |       |       ic_search.xml
+|       |       |       
+|       |       +---layout
+|       |       |       activity_import_export.xml
+|       |       |       activity_login.xml
+|       |       |       activity_main.xml
+|       |       |       activity_mark_attendance.xml
+|       |       |       activity_notifications.xml
+|       |       |       activity_register.xml
+|       |       |       activity_selection.xml
+|       |       |       activity_session_detail.xml
+|       |       |       activity_students.xml
+|       |       |       activity_student_report_detail.xml
+|       |       |       dialog_add_department.xml
+|       |       |       dialog_add_section.xml
+|       |       |       dialog_add_semester.xml
+|       |       |       dialog_add_student.xml
+|       |       |       dialog_adjustment_history.xml
+|       |       |       dialog_adjust_attendance.xml
+|       |       |       dialog_edit_profile.xml
+|       |       |       dialog_history_filter.xml
+|       |       |       dialog_import_target.xml
+|       |       |       fragment_dashboard.xml
+|       |       |       fragment_departments.xml
+|       |       |       fragment_history.xml
+|       |       |       fragment_profile.xml
+|       |       |       fragment_reports.xml
+|       |       |       item_adjustment.xml
+|       |       |       item_attendance_by_date.xml
+|       |       |       item_attendance_detail.xml
+|       |       |       item_attendance_session.xml
+|       |       |       item_department.xml
+|       |       |       item_notification.xml
+|       |       |       item_report_student.xml
+|       |       |       item_student_attendance.xml
+|       |       |       item_student_roster.xml
+|       |       |       view_department_report_row.xml
+|       |       |       view_notification_badge.xml
+|       |       |       view_quick_action.xml
+|       |       |       view_state_empty.xml
+|       |       |       view_state_error.xml
+|       |       |       view_state_loading.xml
+|       |       |       view_stat_card.xml
+|       |       |       
+|       |       +---menu
+|       |       |       bottom_nav_menu.xml
+|       |       |       menu_history_filter.xml
+|       |       |       menu_main.xml
+|       |       |       menu_notifications.xml
+|       |       |       menu_students.xml
+|       |       |       
+|       |       +---mipmap-anydpi-v26
+|       |       |       ic_launcher.xml
+|       |       |       ic_launcher_round.xml
+|       |       |       
+|       |       +---navigation
+|       |       |       nav_graph.xml
+|       |       |       
+|       |       +---values
+|       |       |       colors.xml
+|       |       |       dimens.xml
+|       |       |       strings.xml
+|       |       |       themes.xml
+|       |       |       
+|       |       \---xml
+|       |               backup_rules.xml
+|       |               data_extraction_rules.xml
+|       |               network_security_config.xml
+|       |               
+|       \---test
+|           \---java
+|               \---com
+|                   \---example
+|                       \---studentattendance
+|                           \---utils
+|                                   AttendancePolicyTest.java
+|                                   CsvImportValidatorTest.java
+|                                   
+\---gradle
+    \---wrapper
+            gradle-wrapper.jar
+            gradle-wrapper.properties
+            

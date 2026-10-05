@@ -1,0 +1,450 @@
+[
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_attendance_session.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_attendance_session.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_catalog_choice.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_catalog_choice.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/color-night_bottom_nav_color_selector.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/color-night/bottom_nav_color_selector.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_department_report_row.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_department_report_row.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_state_empty.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_state_empty.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/xml_backup_rules.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_check_circle.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_check_circle.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_reports.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_reports.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_department.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_department.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_avatar_circle.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_avatar_circle.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_status_not_marked.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_status_not_marked.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_calendar.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_calendar.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_error_outline.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_error_outline.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_search_bar.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_search_bar.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/color_bottom_nav_color_selector.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/color/bottom_nav_color_selector.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_import_export.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_import_export.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_stat_attendance.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_stat_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_rounded_surface.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_rounded_surface.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/xml_network_security_config.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_department.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_department.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_inbox.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_inbox.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_brand_logo.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_brand_logo.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_low_attendance_card.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_low_attendance_card.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_status_absent.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_status_absent.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_history.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_history.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_status_present.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_status_present.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/navigation_nav_graph.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_attendance_detail.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_attendance_detail.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_dashboard.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_dashboard.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_report_student.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_report_student.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_status_late.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_status_late.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_stat_card.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_stat_card.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/menu_menu_main.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/menu/menu_main.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_add_student.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_student.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_google.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_google.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_chevron_right.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_chevron_right.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_quick_action.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_quick_action.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_student_roster.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_student_roster.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_fragment_profile.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/menu_menu_notifications.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/menu/menu_notifications.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_low_attendance_accent.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_low_attendance_accent.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_import_target.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_import_target.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_students.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_students.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_fragment_history.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_chart_card.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_chart_card.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_adjust_attendance.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_adjust_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable-nodpi_logo_optimist.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable-nodpi/logo_optimist.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_pill_outline.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_pill_outline.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_session_detail.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_session_detail.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_notifications.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_notifications.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_add_lecture.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_lecture.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_import.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_import.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_logout.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_logout.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_history_filter.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_history_filter.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_search.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_dropdown.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_dropdown.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_student_attendance.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_student_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_export.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_export.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/menu_menu_students.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/menu/menu_students.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_state_error.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_state_error.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_edit.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_edit.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_add_semester.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_semester.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_adjustment.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_adjustment.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_add.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_fragment_dashboard.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_notification.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_notification.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_profile.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_profile.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_fragment_departments.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_departments.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_state_loading.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_state_loading.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_stat_card_blue.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_stat_card_blue.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_splash.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_add_section.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_section.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_attendance_by_date.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_attendance_by_date.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/menu_menu_history_filter.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/menu/menu_history_filter.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_edit_profile.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_edit_profile.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_fragment_reports.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/fragment_reports.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_notification_badge.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_notification_badge.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_student_report_detail.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_student_report_detail.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_register.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_adjustment_history.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_adjustment_history.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_add_department.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_department.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.studentattendance.app-main-57:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_popup_surface.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_popup_surface.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_selection.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_selection.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_ic_filter.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/ic_filter.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_view_io_action_row.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/view_io_action_row.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_main.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_mark_attendance.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_mark_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/drawable_bg_status_leave.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/drawable/bg_status_leave.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_dialog_add_subject.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/dialog_add_subject.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_item_low_attendance.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/item_low_attendance.xml"
+    },
+    {
+        "merged": "com.example.studentattendance.app-merged_res-56:/layout_activity_login.xml.flat",
+        "source": "com.example.studentattendance.app-main-57:/layout/activity_login.xml"
+    }
+]

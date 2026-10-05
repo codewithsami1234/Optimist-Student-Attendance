@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/spacing_md"
+    android:paddingVertical="@dimen/spacing_sm">
+
+    <FrameLayout
+        android:layout_width="@dimen/avatar_size_sm"
+        android:layout_height="@dimen/avatar_size_sm"
+        android:background="@drawable/bg_avatar_circle">
+
+        <TextView
+            android:id="@+id/textAvatarInitials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/brand_primary"
+            android:textSize="@dimen/text_size_body"
+            android:textStyle="bold"
+            tools:text="AR" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textStudentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_subtitle"
+            android:textStyle="bold"
+            tools:text="Ahmed Raza" />
+
+        <TextView
+            android:id="@+id/textStudentMeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_caption"
+            tools:text="CS-001" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/buttonDeleteStudent"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_delete"
+        android:padding="@dimen/spacing_sm"
+        android:src="@drawable/ic_delete"
+        app:tint="@color/error" />
+
+</LinearLayout>

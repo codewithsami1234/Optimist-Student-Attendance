@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_sm"
+    android:background="@drawable/bg_low_attendance_card"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="0dp">
+
+    <View
+        android:layout_width="6dp"
+        android:layout_height="match_parent"
+        android:minHeight="56dp"
+        android:background="@drawable/bg_low_attendance_accent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_sm">
+
+        <TextView
+            android:id="@+id/textStudentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_body"
+            android:textStyle="bold"
+            tools:text="Ahmed Raza · CS-001" />
+
+        <TextView
+            android:id="@+id/textRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/soft_terracotta"
+            android:textSize="@dimen/text_size_caption"
+            android:textStyle="bold"
+            tools:text="62%" />
+    </LinearLayout>
+</LinearLayout>

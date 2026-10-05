@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_md">
+
+    <TextView
+        android:id="@+id/textReviewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/spacing_sm"
+        android:textColor="@color/brand_secondary"
+        android:textSize="@dimen/text_size_body"
+        android:visibility="gone"
+        tools:text="All students are currently at or above 75% attendance." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_semester_review" />
+
+</LinearLayout>

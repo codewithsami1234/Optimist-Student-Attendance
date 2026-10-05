@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.reports.ReportsFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollReports"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/spacing_lg">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_md"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_md">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/reports_filters_title"
+                                android:textColor="@color/text_primary"
+                                android:textSize="@dimen/text_size_subtitle"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonClearFilters"
+                                style="@style/Widget.StudentAttendance.Button.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/reports_clear_filters" />
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputLayoutFilterDepartment"
+                            style="@style/Widget.StudentAttendance.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:hint="@string/reports_filter_department"
+                            app:endIconMode="dropdown_menu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownFilterDepartment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:padding="@dimen/spacing_md" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputLayoutFilterShift"
+                            style="@style/Widget.StudentAttendance.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:hint="@string/reports_filter_shift"
+                            app:endIconMode="dropdown_menu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownFilterShift"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:padding="@dimen/spacing_md" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputLayoutFilterSemester"
+                            style="@style/Widget.StudentAttendance.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:hint="@string/reports_filter_semester"
+                            app:endIconMode="dropdown_menu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownFilterSemester"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:padding="@dimen/spacing_md" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputLayoutFilterSection"
+                            style="@style/Widget.StudentAttendance.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:hint="@string/reports_filter_section"
+                            app:endIconMode="dropdown_menu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownFilterSection"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:padding="@dimen/spacing_md" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputLayoutFilterSubject"
+                            style="@style/Widget.StudentAttendance.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:hint="@string/reports_filter_subject"
+                            app:endIconMode="dropdown_menu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownFilterSubject"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:padding="@dimen/spacing_md" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputLayoutFilterCourse"
+                            style="@style/Widget.StudentAttendance.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:hint="@string/reports_filter_course"
+                            app:endIconMode="dropdown_menu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownFilterCourse"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:padding="@dimen/spacing_md" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textFilterFromDate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_pill_outline"
+                                android:gravity="center"
+                                android:padding="@dimen/spacing_sm"
+                                android:text="@string/reports_filter_from"
+                                android:textColor="@color/text_primary" />
+
+                            <TextView
+                                android:id="@+id/textFilterToDate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_sm"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_pill_outline"
+                                android:gravity="center"
+                                android:padding="@dimen/spacing_sm"
+                                android:text="@string/reports_filter_to"
+                                android:textColor="@color/text_primary" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardReportHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_md">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reports_brand_title"
+                            android:textAllCaps="true"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="@dimen/text_size_caption"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:text="@string/reports_semester_title"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_size_title"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textReportHeaderMeta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_size_body"
+                            tools:text="Department: Computer Science" />
+
+                        <TextView
+                            android:id="@+id/textReportPeriod"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_size_body"
+                            android:textStyle="bold"
+                            tools:text="Reporting Period: January 2026 – June 2026" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:text="@string/reports_summary_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="@string/reports_section_overview"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:columnCount="2">
+
+                    <include
+                        android:id="@+id/cardReportStudents"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+
+                    <include
+                        android:id="@+id/cardReportSessions"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+                </GridLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:text="@string/reports_section_records"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:columnCount="2">
+
+                    <include
+                        android:id="@+id/cardReportPresent"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+
+                    <include
+                        android:id="@+id/cardReportAbsent"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+
+                    <include
+                        android:id="@+id/cardReportLate"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+
+                    <include
+                        android:id="@+id/cardReportLeave"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+                </GridLayout>
+
+                <TextView
+                    android:id="@+id/textReportRecordsNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:text="@string/reports_records_note"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:text="@string/reports_section_student_rates"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:columnCount="2">
+
+                    <include
+                        android:id="@+id/cardReportAbove"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+
+                    <include
+                        android:id="@+id/cardReportBelow"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+
+                    <include
+                        android:id="@+id/cardReportHighest"
+                        layout="@layout/view_report_stat_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnSpan="2"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="@dimen/spacing_sm" />
+                </GridLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:text="@string/reports_section_performance"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardReportRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    app:cardBackgroundColor="@color/surface_alt"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="@dimen/elevation_card"
+                    app:strokeColor="@color/divider"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_md">
+
+                        <TextView
+                            android:id="@+id/textReportRateLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reports_stat_percentage"
+                            android:textAllCaps="true"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_size_caption"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textReportRateValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_size_display"
+                            android:textStyle="bold"
+                            tools:text="92.4%" />
+
+                        <TextView
+                            android:id="@+id/textReportRateHint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:text="@string/reports_stat_percentage_hint"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_size_caption" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/textLowestAttendance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_caption"
+                    tools:text="Lowest: Ali · 62.0%" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:text="@string/reports_weekly_trend"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_sm">
+
+                        <com.example.studentattendance.ui.dashboard.TrendChartView
+                            android:id="@+id/chartWeeklyTrend"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/textWeeklyEmpty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_lg"
+                            android:text="@string/reports_trend_empty"
+                            android:textColor="@color/text_secondary"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:text="@string/reports_monthly_trend"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_sm">
+
+                        <com.example.studentattendance.ui.dashboard.TrendChartView
+                            android:id="@+id/chartMonthlyTrend"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/textMonthlyEmpty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_lg"
+                            android:text="@string/reports_trend_empty"
+                            android:textColor="@color/text_secondary"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/spacing_md"
+                    android:paddingTop="@dimen/spacing_lg">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/reports_student_breakdown"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonPrintReport"
+                        style="@style/Widget.StudentAttendance.Button.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_print_report" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonExportReport"
+                        style="@style/Widget.StudentAttendance.Button.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_export_report" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.StudentAttendance.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:hint="@string/search_students_hint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editReportSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipStatusAll"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/reports_filter_all_students" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipStatusBelow"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reports_filter_below" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipStatusAbove"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reports_filter_above" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupSort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSortPercentage"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/sort_by_percentage" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSortName"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sort_by_name" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSortRoll"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sort_by_roll" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSortPresent"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sort_by_present" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSortAbsent"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sort_by_absent" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/textStudentsEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_lg"
+                    android:text="@string/reports_students_empty"
+                    android:textColor="@color/text_secondary"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerStudentReports"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_report_student" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include
+        android:id="@+id/includeLoading"
+        layout="@layout/view_state_loading" />
+
+    <include
+        android:id="@+id/includeEmpty"
+        layout="@layout/view_state_empty" />
+
+    <include
+        android:id="@+id/includeError"
+        layout="@layout/view_state_error" />
+
+</FrameLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".ui.history.AttendanceHistoryFragment">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/layoutActiveFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/spacing_md"
+            android:paddingVertical="@dimen/spacing_sm">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDepartmentFilter"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_by_department"
+                app:chipIcon="@drawable/ic_filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSemesterFilter"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:text="@string/filter_by_semester"
+                app:chipIcon="@drawable/ic_filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSectionFilter"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:text="@string/filter_by_section"
+                app:chipIcon="@drawable/ic_filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSubjectFilter"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:text="@string/filter_by_subject"
+                app:chipIcon="@drawable/ic_filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCourseCodeFilter"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:text="@string/filter_by_course_code"
+                app:chipIcon="@drawable/ic_filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDateRangeFilter"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:text="@string/filter_from_date"
+                app:chipIcon="@drawable/ic_calendar" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/spacing_md"
+            android:paddingBottom="@dimen/spacing_sm">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonClearFilters"
+                style="@style/Widget.StudentAttendance.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/history_clear_filters" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportExcel"
+                style="@style/Widget.StudentAttendance.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/history_export_excel" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBelow75"
+                style="@style/Widget.StudentAttendance.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/history_below_75" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerSessions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/spacing_lg"
+                tools:listitem="@layout/item_attendance_session" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <include layout="@layout/view_state_loading" android:id="@+id/includeLoading" />
+        <include layout="@layout/view_state_empty" android:id="@+id/includeEmpty" />
+        <include layout="@layout/view_state_error" android:id="@+id/includeError" />
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/spacing_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/spacing_md">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_greeting_hello"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_size_body" />
+
+                        <TextView
+                            android:id="@+id/textUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_size_title"
+                            android:textStyle="bold"
+                            tools:text="Ayesha Khan" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="@dimen/avatar_size_md"
+                        android:layout_height="@dimen/avatar_size_md"
+                        android:background="@drawable/bg_avatar_circle">
+
+                        <TextView
+                            android:id="@+id/textAvatarInitials"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="@dimen/text_size_subtitle"
+                            android:textStyle="bold"
+                            tools:text="AK" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textFirstRun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:background="@drawable/bg_stat_card_blue"
+                    android:padding="@dimen/spacing_md"
+                    android:text="@string/dashboard_first_run"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:text="@string/dashboard_todays_overview"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTodayOverview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_md">
+
+                        <LinearLayout
+                            android:id="@+id/layoutTodayStats"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:layout_width="88dp"
+                                android:layout_height="88dp">
+
+                                <com.google.android.material.progressindicator.CircularProgressIndicator
+                                    android:id="@+id/progressTodayRate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:indeterminate="false"
+                                    android:max="100"
+                                    android:progress="0"
+                                    app:indicatorColor="@color/aqua"
+                                    app:indicatorSize="80dp"
+                                    app:trackColor="@color/divider"
+                                    app:trackThickness="8dp"
+                                    tools:progress="87" />
+
+                                <TextView
+                                    android:id="@+id/textTodayRate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="@dimen/text_size_title"
+                                    android:textStyle="bold"
+                                    tools:text="87%" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_md"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textTodayRateLabel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dashboard_overview_rate_label"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="@dimen/text_size_caption" />
+
+                                <TextView
+                                    android:id="@+id/textTodayDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="@dimen/text_size_body"
+                                    android:textStyle="bold"
+                                    tools:text="Wed, 02 Sep 2026" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutTodayBreakdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_md"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dashboard_status_present"
+                                    android:textColor="@color/status_present"
+                                    android:textSize="@dimen/text_size_caption" />
+
+                                <TextView
+                                    android:id="@+id/textTodayPresent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="@dimen/text_size_subtitle"
+                                    android:textStyle="bold"
+                                    tools:text="12" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dashboard_status_absent"
+                                    android:textColor="@color/status_absent"
+                                    android:textSize="@dimen/text_size_caption" />
+
+                                <TextView
+                                    android:id="@+id/textTodayAbsent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="@dimen/text_size_subtitle"
+                                    android:textStyle="bold"
+                                    tools:text="2" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dashboard_status_late"
+                                    android:textColor="@color/status_late"
+                                    android:textSize="@dimen/text_size_caption" />
+
+                                <TextView
+                                    android:id="@+id/textTodayLate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="@dimen/text_size_subtitle"
+                                    android:textStyle="bold"
+                                    tools:text="1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dashboard_status_leave"
+                                    android:textColor="@color/status_leave"
+                                    android:textSize="@dimen/text_size_caption" />
+
+                                <TextView
+                                    android:id="@+id/textTodayLeave"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="@dimen/text_size_subtitle"
+                                    android:textStyle="bold"
+                                    tools:text="0" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutTodayEmpty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dashboard_no_attendance_today"
+                                android:textColor="@color/text_primary"
+                                android:textSize="@dimen/text_size_body"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_xs"
+                                android:text="@string/dashboard_no_attendance_today_hint"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_size_caption" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <include
+                    android:id="@+id/actionMarkAttendance"
+                    layout="@layout/view_quick_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:layout_marginBottom="@dimen/spacing_md" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:text="@string/dashboard_attendance_alerts"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/layoutLowAttendance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_md"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/textNoAlerts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:text="@string/dashboard_no_alerts"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_md"
+                    android:text="@string/dashboard_recent_activity"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerRecentActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_attendance_session" />
+
+                <TextView
+                    android:id="@+id/textNoRecentActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_lg"
+                    android:gravity="center"
+                    android:text="@string/dashboard_no_recent_activity"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_body"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/view_state_loading" android:id="@+id/includeLoading" />
+
+    <include layout="@layout/view_state_error" android:id="@+id/includeError" />
+
+</FrameLayout>

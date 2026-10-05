@@ -1,0 +1,10 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/white" />
+    <item
+        android:bottom="22dp"
+        android:drawable="@drawable/logo_optimist"
+        android:gravity="center"
+        android:left="22dp"
+        android:right="22dp"
+        android:top="22dp" />
+</layer-list>

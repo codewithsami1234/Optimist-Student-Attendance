@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand hues stay recognizable; chrome and type switch to a dark green-navy. -->
+    <color name="sky_blue">#5DADE2</color>
+    <color name="royal_green">#1B4D3E</color>
+    <color name="sea_green">#3AA68C</color>
+    <color name="aqua">#4FD1C5</color>
+    <color name="bone_white">#FAF7F2</color>
+    <color name="cream">#FFF8ED</color>
+    <color name="oyster_beige">#3A4F48</color>
+    <color name="amber_sand">#E8A33D</color>
+    <color name="soft_terracotta">#E07856</color>
+
+    <color name="brand_primary">@color/sky_blue</color>
+    <color name="brand_primary_dark">#0F1C18</color>
+    <color name="brand_primary_light">@color/aqua</color>
+    <color name="brand_secondary">@color/aqua</color>
+
+    <color name="status_present">#4FD1C5</color>
+    <color name="status_present_bg">#1F3D36</color>
+    <color name="status_present_on">#4FD1C5</color>
+    <color name="status_absent">@color/soft_terracotta</color>
+    <color name="status_absent_bg">#3D2420</color>
+    <color name="status_absent_on">@color/soft_terracotta</color>
+    <color name="status_late">@color/amber_sand</color>
+    <color name="status_late_bg">#3D3220</color>
+    <color name="status_late_on">@color/amber_sand</color>
+    <color name="status_leave">@color/sky_blue</color>
+    <color name="status_leave_bg">#1C2A26</color>
+    <color name="status_leave_on">@color/sky_blue</color>
+    <color name="status_not_marked">#8FA8A0</color>
+    <color name="status_not_marked_bg">#243530</color>
+    <color name="status_not_marked_on">#8FA8A0</color>
+    <color name="status_on_fill">#F2EFE8</color>
+
+    <color name="surface">#1C2A26</color>
+    <color name="surface_alt">#243530</color>
+    <color name="background">#101916</color>
+    <color name="text_primary">#F2EFE8</color>
+    <color name="text_secondary">#A9C4B8</color>
+    <color name="text_hint">#7F9B90</color>
+    <color name="divider">#334740</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#F2EFE8</color>
+    <color name="error">@color/soft_terracotta</color>
+    <color name="overlay_scrim">#99000000</color>
+    <color name="bar_background">#15241F</color>
+    <color name="bar_content">#F2EFE8</color>
+    <color name="nav_item_unchecked">#8FB3A8</color>
+    <color name="success_banner_bg">#1F3D36</color>
+</resources>

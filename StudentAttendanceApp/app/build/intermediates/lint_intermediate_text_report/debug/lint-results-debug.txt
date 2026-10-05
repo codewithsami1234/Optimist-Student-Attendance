@@ -1,0 +1,1111 @@
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\sync\AppNotificationHelper.java:102: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+        NotificationManagerCompat.from(context).notify(notification.getId().hashCode(), builder.build());
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "MissingPermission":
+   This check scans through your code and libraries and looks at the APIs
+   being used, and checks this against the set of permissions required to
+   access those APIs. If the code using those APIs is called at runtime, then
+   the program will crash.
+
+   Furthermore, for permissions that are revocable (with targetSdkVersion 23),
+   client code must also be prepared to handle the calls throwing an exception
+   if the user rejects the request for permission at runtime.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\data\local\AcademicSetupUpdate.java:59: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String normalizedCode = courseCode.trim().toUpperCase();
+                                                  ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\network\ApiUrlPolicy.java:39: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String value = url.toLowerCase();
+                           ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\sync\CloudSyncEngine.java:358: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String lower = message.toLowerCase();
+                               ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\data\local\auth\GoogleIdTokenVerifier.java:73: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String email = text(body, "email").trim().toLowerCase();
+                                                  ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\data\local\auth\LocalAuthEngine.java:36: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String normalizedEmail = email.trim().toLowerCase();
+                                              ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\data\local\auth\LocalAuthEngine.java:59: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String normalizedEmail = email.trim().toLowerCase();
+                                              ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\data\local\auth\LocalAuthEngine.java:84: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String email = identity.email.trim().toLowerCase();
+                                             ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\sync\LowAttendanceEvaluator.java:82: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            notification.message = String.format("%s's monthly attendance has dropped to %.0f%%.",
+                                   ^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomAttendanceAdjustmentRepository.java:70: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            notification.message = String.format("You %s %d day(s) for %s (%s): %s",
+                                   ^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomAttendanceRepository.java:398: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+        notification.message = String.format(
+                               ^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomDepartmentRepository.java:119: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+            String normalizedCode = code.trim().toUpperCase();
+                                                ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomDepartmentRepository.java:189: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                String normalizedCode = courseCode.trim().toUpperCase();
+                                                          ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomDepartmentRepository.java:231: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                : name.trim().replaceAll("[^A-Za-z0-9]", "").toUpperCase();
+                                                             ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomDepartmentRepository.java:306: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                String normalizedCode = code.trim().toUpperCase();
+                                                    ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomDepartmentRepository.java:436: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+            String normalizedCode = code.trim().toUpperCase();
+                                                ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\repository\impl\RoomDepartmentRepository.java:465: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                String normalizedCode = code.trim().toUpperCase();
+                                                    ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\StudentAttendanceAdapter.java:58: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String needle = query == null ? "" : query.trim().toLowerCase();
+                                                          ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\StudentAttendanceAdapter.java:62: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                    || (s.getName() != null && s.getName().toLowerCase().contains(needle))
+                                                           ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\StudentAttendanceAdapter.java:63: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                    || (s.getRollNumber() != null && s.getRollNumber().toLowerCase().contains(needle))) {
+                                                                       ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\dashboard\TrendChartView.java:104: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+        canvas.drawText(String.format("%.0f%%", threshold), 4f, thresholdY - 6f, labelPaint);
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\dashboard\TrendChartView.java:138: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                String value = String.format("%.0f%%", points.get(i).getAttendanceRate());
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\service\XlsxIo.java:53: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                } else if (sheet == null && name.toLowerCase().contains("worksheets/sheet")) {
+                                                 ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\service\XlsxIo.java:461: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        return haystack.toLowerCase().indexOf(needle.toLowerCase(), from);
+                        ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\service\XlsxIo.java:461: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        return haystack.toLowerCase().indexOf(needle.toLowerCase(), from);
+                                                     ~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.US) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:26: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk 34
+        ~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application runs on a version of Android that is more recent than
+   your targetSdkVersion specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdkVersion
+   is less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\AndroidManifest.xml:29: Warning: Redundant label can be removed [RedundantLabel]
+            android:label="@string/app_name"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RedundantLabel":
+   When an activity does not have a label attribute, it will use the one from
+   the application tag. Since the application has already specified the same
+   label, the label on this activity can be omitted.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:64: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.8.0 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:65: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.14.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.11.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:66: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.2 [GradleDependency]
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:67: Warning: A newer version of androidx.core:core than 1.12.0 is available: 1.19.0 [GradleDependency]
+    implementation 'androidx.core:core:1.12.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:68: Warning: A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0 [GradleDependency]
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:69: Warning: A newer version of androidx.swiperefreshlayout:swiperefreshlayout than 1.1.0 is available: 1.2.0 [GradleDependency]
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:71: Warning: A newer version of androidx.activity:activity than 1.8.2 is available: 1.13.0 [GradleDependency]
+    implementation 'androidx.activity:activity:1.8.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:72: Warning: A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.9.0 [GradleDependency]
+    implementation 'androidx.fragment:fragment:1.6.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:75: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel than 2.7.0 is available: 2.11.0 [GradleDependency]
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:76: Warning: A newer version of androidx.lifecycle:lifecycle-livedata than 2.7.0 is available: 2.11.0 [GradleDependency]
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:77: Warning: A newer version of androidx.lifecycle:lifecycle-runtime than 2.7.0 is available: 2.11.0 [GradleDependency]
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.7.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:80: Warning: A newer version of androidx.navigation:navigation-fragment than 2.7.6 is available: 2.10.1 [GradleDependency]
+    implementation 'androidx.navigation:navigation-fragment:2.7.6'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:81: Warning: A newer version of androidx.navigation:navigation-ui than 2.7.6 is available: 2.10.1 [GradleDependency]
+    implementation 'androidx.navigation:navigation-ui:2.7.6'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:92: Warning: A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.8.5 [GradleDependency]
+    implementation "androidx.room:room-runtime:$room_version"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:96: Warning: A newer version of androidx.work:work-runtime than 2.9.0 is available: 2.11.2 [GradleDependency]
+    implementation 'androidx.work:work-runtime:2.9.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:99: Warning: A newer version of androidx.credentials:credentials than 1.3.0 is available: 1.6.0 [GradleDependency]
+    implementation 'androidx.credentials:credentials:1.3.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:100: Warning: A newer version of androidx.credentials:credentials-play-services-auth than 1.3.0 is available: 1.6.0 [GradleDependency]
+    implementation 'androidx.credentials:credentials-play-services-auth:1.3.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:101: Warning: A newer version of com.google.android.libraries.identity.googleid:googleid than 1.1.1 is available: 1.2.0 [GradleDependency]
+    implementation 'com.google.android.libraries.identity.googleid:googleid:1.1.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:105: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0 [GradleDependency]
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\build.gradle:106: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.7.0 [GradleDependency]
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\view_notification_badge.xml:13: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+        android:tint="@color/bone_white" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseAppTint":
+   ImageView or ImageButton uses android:tint instead of app:tint
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.appcompat
+   Feedback: https://issuetracker.google.com/issues/new?component=460343
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:252: Error: Incorrect formatting string semester_review_all_ok; missing conversion character in '% a'? [StringFormatInvalid]
+    <string name="semester_review_all_ok">All students are currently at or above 75% attendance.</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:367: Error: Incorrect formatting string reports_all_above_75; missing conversion character in '% a'? [StringFormatInvalid]
+    <string name="reports_all_above_75">All students are currently at or above 75% attendance.</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:373: Error: Incorrect formatting string reports_filter_above; missing conversion character in '% a'? [StringFormatInvalid]
+    <string name="reports_filter_above">75% and above</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "StringFormatInvalid":
+   If a string contains a '%' character, then the string may be a formatting
+   string which will be passed to String.format from Java code to replace each
+   '%' occurrence with specific values.
+
+   This lint warning checks for two related problems:
+   (1) Formatting strings that are invalid, meaning that String.format will
+   throw exceptions at runtime when attempting to use the format string.
+   (2) Strings containing '%' that are not formatting strings getting passed
+   to a String.format call. In this case the '%' will need to be escaped as
+   '%%'.
+
+   NOTE: Not all Strings which look like formatting strings are intended for
+   use by String.format; for example, they may contain date formats intended
+   for android.text.format.Time#format(). Lint cannot always figure out that a
+   String is a date format, so you may get false warnings in those scenarios.
+   See the suppress help topic for information on how to suppress errors in
+   that case.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:91: Warning: Formatting %d followed by words ("present"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="attendance_saved_detail">Saved %1$d present, %2$d absent, %3$d late, %4$d leave.</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:146: Warning: Formatting %d followed by words ("students"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="label_student_count">%1$d students</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:209: Warning: Formatting %d followed by words ("students"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="mark_attendance_subtitle">%1$d students · %2$s</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:248: Warning: Formatting %d followed by words ("students"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="export_success_students">Exported attendance report for %1$d students.</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:249: Warning: Formatting %d followed by words ("records"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="history_import_result">Imported: %1$d records\nSkipped: %2$d duplicate records\nInvalid: %3$d records</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:416: Warning: Formatting %d followed by words ("rows"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="export_success_format">Exported %1$d rows successfully</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:417: Warning: Formatting %d followed by words ("new"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="import_success_format">Imported %1$d new students successfully</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:433: Warning: Formatting %d followed by words ("change"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="sync_pending">%1$d change(s) waiting to sync to the cloud.</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "PluralsCandidate":
+   This lint check looks for potential errors in internationalization where
+   you have translated a message which involves a quantity and it looks like
+   other parts of the string may need grammatical changes.
+
+   For example, rather than something like this:
+     <string name="try_again">Try again in %d seconds.</string>
+   you should be using a plural:
+      <plurals name="try_again">
+           <item quantity="one">Try again in %d second</item>
+           <item quantity="other">Try again in %d seconds</item>
+       </plurals>
+   This will ensure that in other languages the right set of translations are
+   provided for the different quantity classes.
+
+   (This check depends on some heuristics, so it may not accurately determine
+   whether a string really should be a quantity. You can use tools:ignore to
+   filter out false positives.
+
+   https://developer.android.com/guide/topics/resources/string-resource.html#Plurals
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\dashboard\TrendChartView.java:111: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+        Path fill = new Path();
+                    ~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\dashboard\TrendChartView.java:113: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+        float[] xs = new float[points.size()];
+                     ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\dashboard\TrendChartView.java:114: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+        float[] ys = new float[points.size()];
+                     ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "DrawAllocation":
+   You should avoid allocating objects during a drawing or layout operation.
+   These are called frequently, so a smooth UI can be interrupted by garbage
+   collection pauses caused by the object allocations.
+
+   The way this is generally handled is to allocate the needed objects up
+   front and to reuse them for each drawing operation.
+
+   Some methods allocate memory on your behalf (such as Bitmap.create), and
+   these should be handled in the same way.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\AttendanceAdjustmentAdapter.java:33: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\AttendanceByDateAdapter.java:31: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\AttendanceDetailAdapter.java:30: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\AttendanceHistoryAdapter.java:39: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\CatalogChoiceAdapter.java:46: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\CatalogChoiceAdapter.java:51: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\DepartmentAdapter.java:40: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\NotificationAdapter.java:36: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\ReportAdapter.java:50: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\SemesterReportAdapter.java:38: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+            notifyDataSetChanged();
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\SemesterReportAdapter.java:53: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\SemesterReviewAdapter.java:26: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\StudentAttendanceAdapter.java:54: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\StudentAttendanceAdapter.java:67: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\StudentAttendanceAdapter.java:74: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\StudentRosterAdapter.java:43: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NotifyDataSetChanged":
+   The RecyclerView adapter's onNotifyDataSetChanged method does not specify
+   what about the data set has changed, forcing any observers to assume that
+   all existing items and structure may no longer be valid. `LayoutManager`s
+   will be forced to fully rebind and relayout all visible views.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_selection.xml:310: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+                <LinearLayout
+                 ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_export_attendance.xml:148: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+            <LinearLayout
+             ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_export_attendance.xml:187: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+            <LinearLayout
+             ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:118: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+        <LinearLayout
+         ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:160: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+        <LinearLayout
+         ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseCompoundDrawables":
+   A LinearLayout which contains an ImageView and a TextView can be more
+   efficiently handled as a compound drawable (a single TextView, using the
+   drawableTop, drawableLeft, drawableRight and/or drawableBottom attributes
+   to draw one or more images adjacent to the text).
+
+   If the two widgets are offset from each other with margins, this can be
+   replaced with a drawablePadding attribute.
+
+   There's a lint quickfix to perform this conversion in the Eclipse plugin.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_dashboard.xml:26: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+                <LinearLayout
+                 ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_dashboard.xml:113: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+                        <LinearLayout
+                         ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_dashboard.xml:176: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+                        <LinearLayout
+                         ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\item_semester_review.xml:2: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\item_student_attendance.xml:19: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+        <LinearLayout
+         ~~~~~~~~~~~~
+
+   Explanation for issues of type "DisableBaselineAlignment":
+   When a LinearLayout is used to distribute the space proportionally between
+   nested layouts, the baseline alignment property should be turned off to
+   make the layout computation faster.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_import_export.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_login.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme_StudentAttendance_NoActionBar) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_main.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme_StudentAttendance_NoActionBar) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_mark_attendance.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_notifications.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_register.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme_StudentAttendance_NoActionBar) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_selection.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_session_detail.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_splash.xml:5: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_student_report_detail.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_students.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_add_lecture.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_add_section.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_add_semester.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_add_student.xml:6: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_add_subject.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_adjust_attendance.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_adjustment_history.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_edit_profile.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:6: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_import_target.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_semester_review.xml:6: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_dashboard.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_departments.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_history.xml:6: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_profile.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_reports.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\item_dropdown.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="@color/surface"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\item_notification.xml:6: Warning: Possible overdraw: Root element paints background ?attr/selectableItemBackground with a theme that also paints a background (inferred theme is @style/Theme.StudentAttendance) [Overdraw]
+    android:background="?attr/selectableItemBackground"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\drawable\bg_chart_card.xml:1: Warning: The resource R.drawable.bg_chart_card appears to be unused [UnusedResources]
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\drawable\bg_rounded_surface.xml:1: Warning: The resource R.drawable.bg_rounded_surface appears to be unused [UnusedResources]
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\drawable\bg_search_bar.xml:1: Warning: The resource R.drawable.bg_search_bar appears to be unused [UnusedResources]
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:17: Warning: The resource R.color.brand_primary_light appears to be unused [UnusedResources]
+    <color name="brand_primary_light">@color/aqua</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:21: Warning: The resource R.color.status_present_bg appears to be unused [UnusedResources]
+    <color name="status_present_bg">@color/sea_green</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:23: Warning: The resource R.color.status_absent_bg appears to be unused [UnusedResources]
+    <color name="status_absent_bg">@color/soft_terracotta</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:25: Warning: The resource R.color.status_late_bg appears to be unused [UnusedResources]
+    <color name="status_late_bg">@color/amber_sand</color>
+           ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:30: Warning: The resource R.color.status_on_fill appears to be unused [UnusedResources]
+    <color name="status_on_fill">@color/bone_white</color>
+           ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:40: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">@color/royal_green</color>
+           ~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:42: Warning: The resource R.color.overlay_scrim appears to be unused [UnusedResources]
+    <color name="overlay_scrim">#661B4D3E</color>
+           ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\colors.xml:46: Warning: The resource R.color.success_banner_bg appears to be unused [UnusedResources]
+    <color name="success_banner_bg">#E6F4F0</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_add_lecture.xml:2: Warning: The resource R.layout.dialog_add_lecture appears to be unused [UnusedResources]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\dimens.xml:11: Warning: The resource R.dimen.corner_radius_lg appears to be unused [UnusedResources]
+    <dimen name="corner_radius_lg">20dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\drawable\ic_brand_logo.xml:1: Warning: The resource R.drawable.ic_brand_logo appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-hdpi\ic_launcher_foreground.png: Warning: The resource R.mipmap.ic_launcher_foreground appears to be unused [UnusedResources]
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\menu\menu_history_filter.xml:2: Warning: The resource R.menu.menu_history_filter appears to be unused [UnusedResources]
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\menu\menu_students.xml:2: Warning: The resource R.menu.menu_students appears to be unused [UnusedResources]
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:4: Warning: The resource R.string.app_tagline appears to be unused [UnusedResources]
+    <string name="app_tagline">Smart Attendance System</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:11: Warning: The resource R.string.title_login appears to be unused [UnusedResources]
+    <string name="title_login">Login</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:25: Warning: The resource R.string.title_settings appears to be unused [UnusedResources]
+    <string name="title_settings">Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:33: Warning: The resource R.string.action_show_password appears to be unused [UnusedResources]
+    <string name="action_show_password">Show password</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:43: Warning: The resource R.string.error_google_not_connected appears to be unused [UnusedResources]
+    <string name="error_google_not_connected">Google Sign-In isn\u2019t connected yet. Please use email and password, or configure Google Sign-In to continue with your Google account.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:60: Warning: The resource R.string.dashboard_trend_empty appears to be unused [UnusedResources]
+    <string name="dashboard_trend_empty">No attendance trend yet. Saved attendance will appear here.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:61: Warning: The resource R.string.dashboard_trend_subtitle_weekly appears to be unused [UnusedResources]
+    <string name="dashboard_trend_subtitle_weekly">Attendance percentage by recorded day this week</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:62: Warning: The resource R.string.dashboard_trend_subtitle_monthly appears to be unused [UnusedResources]
+    <string name="dashboard_trend_subtitle_monthly">Attendance percentage by recorded day this month</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:67: Warning: The resource R.string.dashboard_total_students appears to be unused [UnusedResources]
+    <string name="dashboard_total_students">Total Students</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:68: Warning: The resource R.string.dashboard_present_today appears to be unused [UnusedResources]
+    <string name="dashboard_present_today">Present Today</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:69: Warning: The resource R.string.dashboard_absent_today appears to be unused [UnusedResources]
+    <string name="dashboard_absent_today">Absent Today</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:70: Warning: The resource R.string.dashboard_attendance_rate appears to be unused [UnusedResources]
+    <string name="dashboard_attendance_rate">Attendance Rate</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:71: Warning: The resource R.string.dashboard_quick_actions appears to be unused [UnusedResources]
+    <string name="dashboard_quick_actions">Quick Actions</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:74: Warning: The resource R.string.dashboard_action_reports appears to be unused [UnusedResources]
+    <string name="dashboard_action_reports">Reports</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:75: Warning: The resource R.string.dashboard_action_students appears to be unused [UnusedResources]
+    <string name="dashboard_action_students">Students</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:76: Warning: The resource R.string.dashboard_action_departments appears to be unused [UnusedResources]
+    <string name="dashboard_action_departments">Departments</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:79: Warning: The resource R.string.dashboard_late_today appears to be unused [UnusedResources]
+    <string name="dashboard_late_today">Late Today</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:80: Warning: The resource R.string.dashboard_leave_today appears to be unused [UnusedResources]
+    <string name="dashboard_leave_today">Leave Today</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:82: Warning: The resource R.string.dashboard_weekly_trend appears to be unused [UnusedResources]
+    <string name="dashboard_weekly_trend">This Week\'s Trend</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:83: Warning: The resource R.string.dashboard_attendance_trend appears to be unused [UnusedResources]
+    <string name="dashboard_attendance_trend">Attendance Trend</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:84: Warning: The resource R.string.trend_weekly appears to be unused [UnusedResources]
+    <string name="trend_weekly">Weekly</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:85: Warning: The resource R.string.trend_monthly appears to be unused [UnusedResources]
+    <string name="trend_monthly">Monthly</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:86: Warning: The resource R.string.trend_scope_section appears to be unused [UnusedResources]
+    <string name="trend_scope_section">Section (or all classes)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:87: Warning: The resource R.string.trend_scope_student appears to be unused [UnusedResources]
+    <string name="trend_scope_student">Student (or whole section)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:88: Warning: The resource R.string.trend_all_classes appears to be unused [UnusedResources]
+    <string name="trend_all_classes">All classes</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:89: Warning: The resource R.string.trend_all_students appears to be unused [UnusedResources]
+    <string name="trend_all_students">Whole section</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:92: Warning: The resource R.string.reports_attendance_trend appears to be unused [UnusedResources]
+    <string name="reports_attendance_trend">Weekly / Monthly attendance</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:100: Warning: The resource R.string.reports_view_full_report appears to be unused [UnusedResources]
+    <string name="reports_view_full_report">View full report</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:133: Warning: The resource R.string.add_department_code_hint appears to be unused [UnusedResources]
+    <string name="add_department_code_hint">Short code (e.g. CS)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:134: Warning: The resource R.string.add_department_head_hint appears to be unused [UnusedResources]
+    <string name="add_department_head_hint">Head of department (optional)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:144: Warning: The resource R.string.action_add_new appears to be unused [UnusedResources]
+    <string name="action_add_new">+ Add new</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:145: Warning: The resource R.string.label_head_of_department appears to be unused [UnusedResources]
+    <string name="label_head_of_department">Head: %1$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:146: Warning: The resource R.string.label_student_count appears to be unused [UnusedResources]
+    <string name="label_student_count">%1$d students</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:159: Warning: The resource R.string.action_load_students appears to be unused [UnusedResources]
+    <string name="action_load_students">Mark lecture attendance</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:160: Warning: The resource R.string.action_mark_lecture appears to be unused [UnusedResources]
+    <string name="action_mark_lecture">Mark lecture attendance</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:165: Warning: The resource R.string.hint_choose_lecture appears to be unused [UnusedResources]
+    <string name="hint_choose_lecture">Add a lecture for this course</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:166: Warning: The resource R.string.lecture_label_format appears to be unused [UnusedResources]
+    <string name="lecture_label_format">Lecture %1$d</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:168: Warning: The resource R.string.add_lecture_title appears to be unused [UnusedResources]
+    <string name="add_lecture_title">Add lecture</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:169: Warning: The resource R.string.hint_lecture_number appears to be unused [UnusedResources]
+    <string name="hint_lecture_number">Lecture number (e.g. 1)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:170: Warning: The resource R.string.hint_lecture_title appears to be unused [UnusedResources]
+    <string name="hint_lecture_title">Lecture title (optional)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:171: Warning: The resource R.string.error_select_lecture appears to be unused [UnusedResources]
+    <string name="error_select_lecture">Please add or select a lecture</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:172: Warning: The resource R.string.confirm_delete_lecture appears to be unused [UnusedResources]
+    <string name="confirm_delete_lecture">Delete %1$s? Saved attendance for this lecture is kept.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:192: Warning: The resource R.string.reports_student_period_format appears to be unused [UnusedResources]
+    <string name="reports_student_period_format">%1$s · Weekly %2$d%% · Monthly %3$d%%</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:216: Warning: The resource R.string.status_not_marked appears to be unused [UnusedResources]
+    <string name="status_not_marked">Not marked</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:228: Warning: The resource R.string.history_export_semester appears to be unused [UnusedResources]
+    <string name="history_export_semester">Export semester</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:229: Warning: The resource R.string.history_import_excel appears to be unused [UnusedResources]
+    <string name="history_import_excel">Import Excel</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:231: Warning: The resource R.string.history_select_class_first appears to be unused [UnusedResources]
+    <string name="history_select_class_first">Select department, semester, and course first.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:241: Warning: The resource R.string.export_error_select_semester appears to be unused [UnusedResources]
+    <string name="export_error_select_semester">Please select a semester.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:242: Warning: The resource R.string.export_error_select_section appears to be unused [UnusedResources]
+    <string name="export_error_select_section">Please select a section.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:243: Warning: The resource R.string.export_error_select_course appears to be unused [UnusedResources]
+    <string name="export_error_select_course">Please select a course.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:249: Warning: The resource R.string.history_import_result appears to be unused [UnusedResources]
+    <string name="history_import_result">Imported: %1$d records\nSkipped: %2$d duplicate records\nInvalid: %3$d records</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:250: Warning: The resource R.string.history_import_errors_title appears to be unused [UnusedResources]
+    <string name="history_import_errors_title">Import details</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:286: Warning: The resource R.string.notifications_marked_read appears to be unused [UnusedResources]
+    <string name="notifications_marked_read">Notification marked as read</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:292: Warning: The resource R.string.confirm_delete_student appears to be unused [UnusedResources]
+    <string name="confirm_delete_student">Delete this student? This is only allowed if they have no attendance history.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:294: Warning: The resource R.string.confirm_delete_department appears to be unused [UnusedResources]
+    <string name="confirm_delete_department">Delete this department? It must be empty.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:297: Warning: The resource R.string.confirm_archive_department appears to be unused [UnusedResources]
+    <string name="confirm_archive_department">Archive this department?</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:298: Warning: The resource R.string.student_updated appears to be unused [UnusedResources]
+    <string name="student_updated">Student updated</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:299: Warning: The resource R.string.student_archived appears to be unused [UnusedResources]
+    <string name="student_archived">Student archived</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:300: Warning: The resource R.string.student_deleted appears to be unused [UnusedResources]
+    <string name="student_deleted">Student deleted</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:302: Warning: The resource R.string.department_updated appears to be unused [UnusedResources]
+    <string name="department_updated">Department updated</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:305: Warning: The resource R.string.hint_transfer_section appears to be unused [UnusedResources]
+    <string name="hint_transfer_section">Destination section</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:308: Warning: The resource R.string.profile_api_url_hint appears to be unused [UnusedResources]
+    <string name="profile_api_url_hint">Stored on this device</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:310: Warning: The resource R.string.error_api_url_https appears to be unused [UnusedResources]
+    <string name="error_api_url_https">Use a https:// cloud API URL. Emulator addresses such as 10.0.2.2 are not used on real devices.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:311: Warning: The resource R.string.threshold_saved appears to be unused [UnusedResources]
+    <string name="threshold_saved">Attendance threshold saved</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:312: Warning: The resource R.string.api_url_saved appears to be unused [UnusedResources]
+    <string name="api_url_saved">API URL saved. Sign in again if the server changed.</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:313: Warning: The resource R.string.action_download_template appears to be unused [UnusedResources]
+    <string name="action_download_template">Download CSV template</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:314: Warning: The resource R.string.action_export_summary appears to be unused [UnusedResources]
+    <string name="action_export_summary">Export attendance percentages (Excel)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:321: Warning: The resource R.string.template_saved appears to be unused [UnusedResources]
+    <string name="template_saved">CSV template saved</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:324: Warning: The resource R.string.label_session_summary appears to be unused [UnusedResources]
+    <string name="label_session_summary">%1$s · %2$s · %3$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:327: Warning: The resource R.string.reports_overview appears to be unused [UnusedResources]
+    <string name="reports_overview">Overview</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:328: Warning: The resource R.string.reports_overall_rate appears to be unused [UnusedResources]
+    <string name="reports_overall_rate">Overall Attendance Rate</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:329: Warning: The resource R.string.reports_by_department appears to be unused [UnusedResources]
+    <string name="reports_by_department">By Department</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:330: Warning: The resource R.string.reports_by_section appears to be unused [UnusedResources]
+    <string name="reports_by_section">By Section</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:332: Warning: The resource R.string.reports_empty_title appears to be unused [UnusedResources]
+    <string name="reports_empty_title">No data to report yet</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:333: Warning: The resource R.string.reports_empty_subtitle appears to be unused [UnusedResources]
+    <string name="reports_empty_subtitle">Mark attendance for at least one class to see reports</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:350: Warning: The resource R.string.reports_stat_students appears to be unused [UnusedResources]
+    <string name="reports_stat_students">Total students</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:356: Warning: The resource R.string.reports_stat_percentage appears to be unused [UnusedResources]
+    <string name="reports_stat_percentage">Average attendance</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:360: Warning: The resource R.string.reports_stat_lowest appears to be unused [UnusedResources]
+    <string name="reports_stat_lowest">Lowest</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:369: Warning: The resource R.string.reports_status_good appears to be unused [UnusedResources]
+    <string name="reports_status_good">Good</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:370: Warning: The resource R.string.reports_status_below appears to be unused [UnusedResources]
+    <string name="reports_status_below">Below 75%</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:377: Warning: The resource R.string.reports_course_title appears to be unused [UnusedResources]
+    <string name="reports_course_title">%1$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:403: Warning: The resource R.string.import_export_students_section appears to be unused [UnusedResources]
+    <string name="import_export_students_section">Students</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:404: Warning: The resource R.string.import_export_attendance_section appears to be unused [UnusedResources]
+    <string name="import_export_attendance_section">Attendance</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:405: Warning: The resource R.string.action_export_attendance appears to be unused [UnusedResources]
+    <string name="action_export_attendance">Export Attendance (Excel)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:406: Warning: The resource R.string.action_export_students appears to be unused [UnusedResources]
+    <string name="action_export_students">Export Excel Sheet</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:407: Warning: The resource R.string.action_export_students_csv appears to be unused [UnusedResources]
+    <string name="action_export_students_csv">Export Students (CSV)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:408: Warning: The resource R.string.action_export_students_xlsx appears to be unused [UnusedResources]
+    <string name="action_export_students_xlsx">Export Excel Sheet</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:410: Warning: The resource R.string.action_import_students_csv appears to be unused [UnusedResources]
+    <string name="action_import_students_csv">Import Students (CSV)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:411: Warning: The resource R.string.action_import_students_xlsx appears to be unused [UnusedResources]
+    <string name="action_import_students_xlsx">Import Excel Sheet</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:412: Warning: The resource R.string.action_download_template_csv appears to be unused [UnusedResources]
+    <string name="action_download_template_csv">Download CSV template</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:413: Warning: The resource R.string.action_download_template_xlsx appears to be unused [UnusedResources]
+    <string name="action_download_template_xlsx">Download Excel template</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:417: Warning: The resource R.string.import_success_format appears to be unused [UnusedResources]
+    <string name="import_success_format">Imported %1$d new students successfully</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:424: Warning: The resource R.string.search appears to be unused [UnusedResources]
+    <string name="search">Search</string>
+            ~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:425: Warning: The resource R.string.back appears to be unused [UnusedResources]
+    <string name="back">Back</string>
+            ~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:433: Warning: The resource R.string.sync_pending appears to be unused [UnusedResources]
+    <string name="sync_pending">%1$d change(s) waiting to sync to the cloud.</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:434: Warning: The resource R.string.sync_offline_cache appears to be unused [UnusedResources]
+    <string name="sync_offline_cache">Couldn\'t reach the server. Showing last saved data.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:435: Warning: The resource R.string.content_desc_avatar appears to be unused [UnusedResources]
+    <string name="content_desc_avatar">User avatar</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\strings.xml:436: Warning: The resource R.string.content_desc_status_icon appears to be unused [UnusedResources]
+    <string name="content_desc_status_icon">Attendance status icon</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\themes.xml:123: Warning: The resource R.style.TextAppearance_StudentAttendance_Title appears to be unused [UnusedResources]
+    <style name="TextAppearance.StudentAttendance.Title" parent="TextAppearance.MaterialComponents.Headline6">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\themes.xml:128: Warning: The resource R.style.TextAppearance_StudentAttendance_Body appears to be unused [UnusedResources]
+    <style name="TextAppearance.StudentAttendance.Body" parent="TextAppearance.MaterialComponents.Body2">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\themes.xml:132: Warning: The resource R.style.Widget_StudentAttendance_CardView appears to be unused [UnusedResources]
+    <style name="Widget.StudentAttendance.CardView" parent="Widget.MaterialComponents.CardView">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\values\themes.xml:146: Warning: The resource R.style.ShapeAppearance_StudentAttendance_Chip appears to be unused [UnusedResources]
+    <style name="ShapeAppearance.StudentAttendance.Chip" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\view_department_report_row.xml:2: Warning: The resource R.layout.view_department_report_row appears to be unused [UnusedResources]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+^
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\activity_student_report_detail.xml:10: Warning: This LinearLayout layout or its FrameLayout parent is unnecessary; transfer the background attribute to the other view [UselessParent]
+    <LinearLayout
+     ~~~~~~~~~~~~
+
+   Explanation for issues of type "UselessParent":
+   A layout with children that has no siblings, is not a scrollview or a root
+   layout, and does not have a background, can be removed and have its
+   children moved directly into the parent for a flatter and more efficient
+   layout hierarchy.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_profile.xml:80: Warning: This namespace declaration is redundant [RedundantNamespace]
+                xmlns:app="http://schemas.android.com/apk/res-auto" />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RedundantNamespace":
+   In Android XML documents, only specify the namespace on the root/document
+   element. Namespace declarations elsewhere in the document are typically
+   accidental leftovers from copy/pasting XML from other files or
+   documentation.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-xxxhdpi\ic_launcher_foreground.png: Warning: The following images appear both as density independent .xml files and as bitmap files: srcmainresdrawableic_launcher_foreground.xml, srcmainresmipmap-hdpiic_launcher_foreground.png [IconXmlAndPng]
+
+   Explanation for issues of type "IconXmlAndPng":
+   If a drawable resource appears as an .xml file in the drawable/ folder,
+   it's usually not intentional for it to also appear as a bitmap using the
+   same name; generally you expect the drawable XML file to define states and
+   each state has a corresponding drawable bitmap.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-hdpi\ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-mdpi\ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-xhdpi\ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-xxhdpi\ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+
+   Explanation for issues of type "IconLauncherShape":
+   According to the Android Design Guide
+   (https://d.android.com/r/studio-ui/designer/material/iconography) your
+   launcher icons should "use a distinct silhouette", a "three-dimensional,
+   front view, with a slight perspective as if viewed from above, so that
+   users perceive some depth."
+
+   The unique silhouette implies that your launcher icon should not be a
+   filled square.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\view_notification_badge.xml:25: Warning: Avoid using sizes smaller than 11sp: 10sp [SmallSp]
+        android:textSize="10sp"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SmallSp":
+   Avoid using sizes smaller than 11sp.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\menu\menu_main.xml:8: Warning: Prefer "ifRoom" instead of "always" [AlwaysShowAction]
+        app:showAsAction="always" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AlwaysShowAction":
+   Using showAsAction="always" in menu XML, or MenuItem.SHOW_AS_ACTION_ALWAYS
+   in Java code is usually a deviation from the user interface style guide.Use
+   ifRoom or the corresponding MenuItem.SHOW_AS_ACTION_IF_ROOM instead.
+
+   If always is used sparingly there are usually no problems and behavior is
+   roughly equivalent to ifRoom but with preference over other ifRoom items.
+   Using it more than twice in the same menu is a bad idea.
+
+   This check looks for menu XML files that contain more than two always
+   actions, or some always actions and no ifRoom actions. In Java code, it
+   looks for projects that contain references to
+   MenuItem.SHOW_AS_ACTION_ALWAYS and no references to
+   MenuItem.SHOW_AS_ACTION_IF_ROOM.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_export_attendance.xml:49: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_export_attendance.xml:66: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_export_attendance.xml:83: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_export_attendance.xml:100: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_export_attendance.xml:117: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:26: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:44: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:61: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:78: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_history_filter.xml:95: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_import_target.xml:33: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_import_target.xml:51: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_import_target.xml:69: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <AutoCompleteTextView
+         ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_setup_department.xml:37: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_setup_department.xml:54: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_reports.xml:73: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                            <AutoCompleteTextView
+                             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_reports.xml:90: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                            <AutoCompleteTextView
+                             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_reports.xml:107: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                            <AutoCompleteTextView
+                             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_reports.xml:124: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                            <AutoCompleteTextView
+                             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_reports.xml:141: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                            <AutoCompleteTextView
+                             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\fragment_reports.xml:158: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                            <AutoCompleteTextView
+                             ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "LabelFor":
+   Editable text fields should provide an android:hint or, provided your
+   minSdkVersion is at least 17, they may be referenced by a view with a
+   android:labelFor attribute.
+
+   When using android:labelFor, be sure to provide an android:text or an
+   android:contentDescription.
+
+   If your view is labeled but by a label in a different layout which includes
+   this one, just suppress this warning from lint.
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\AttendanceAdjustmentAdapter.java:67: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            binding.textDelta.setText(sign + adjustment.getDelta() + " day" + (Math.abs(adjustment.getDelta()) == 1 ? "" : "s"));
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\adapter\AttendanceAdjustmentAdapter.java:67: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            binding.textDelta.setText(sign + adjustment.getDelta() + " day" + (Math.abs(adjustment.getDelta()) == 1 ? "" : "s"));
+                                                                     ~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\history\AttendanceHistoryFragment.java:293: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                    (filter.fromDate == null ? "…" : DateUtils.toDisplayFormat(filter.fromDate))
+                    ^
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\dashboard\DashboardFragment.java:182: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            row.textStudentName.setText(student.getStudentName() + " · " + student.getRollNumber());
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\dashboard\DashboardFragment.java:184: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            row.textRate.setText(rate + "%");
+                                 ~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\java\com\example\studentattendance\ui\reports\StudentReportDetailActivity.java:108: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        binding.textOverallRate.setText(rate + "%");
+                                        ~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_adjust_attendance.xml:31: Warning: Hardcoded string "−", should use @string resource [HardcodedText]
+            android:text="−" />
+            ~~~~~~~~~~~~~~~~
+C:\Users\DELL\Desktop\StudentAttendance\StudentAttendanceApp\app\src\main\res\layout\dialog_adjust_attendance.xml:53: Warning: Hardcoded string "+", should use @string resource [HardcodedText]
+            android:text="+" />
+            ~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+5 errors, 273 warnings

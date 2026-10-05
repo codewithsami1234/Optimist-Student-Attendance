@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-09-02T11:09:11" hostname="DESKTOP-2QJ7AKR" time="4.184">
+  <properties/>
+  <testcase name="registerThenLoginWithSameCredentialsSucceeds" classname="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" time="0.779"/>
+  <testcase name="googleOnlyAccountCannotUsePasswordLogin" classname="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" time="0.001"/>
+  <testcase name="loginRejectsWrongPasswordAndUnknownEmail" classname="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" time="1.037"/>
+  <testcase name="duplicateEmailIsRejected" classname="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" time="0.612"/>
+  <testcase name="googleSignInLinksExistingPasswordAccount" classname="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" time="1.023"/>
+  <testcase name="accountPersistsAfterLogoutSoLoginWorksAgain" classname="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" time="0.731"/>
+  <testcase name="googleUserIsPersistedAndCanSignInAgain" classname="com.example.studentattendance.data.local.auth.LocalAuthEngineTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
